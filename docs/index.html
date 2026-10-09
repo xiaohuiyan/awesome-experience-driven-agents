@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Awesome Experience-Driven Agents</title>
+  <meta name="description" content="A searchable list of research on LLM agents that learn from their own task-execution trajectories: experience formation, organization, utilization, and maintenance.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-top">
+        <p class="eyebrow">Awesome list · companion to the survey</p>
+        <button id="theme" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      </div>
+      <h1>Awesome Experience-Driven Agents</h1>
+      <p class="lede">Research on LLM agents that learn from their own task-execution trajectories: how <b>experience</b> is
+        <span class="stage-word s-formation">formed</span>,
+        <span class="stage-word s-organization">organized</span>,
+        <span class="stage-word s-utilization">utilized</span>, and
+        <span class="stage-word s-maintenance">maintained</span>.</p>
+      <div class="stats" id="stats" aria-live="polite"></div>
+      <div class="hero-links">
+        <a class="btn primary" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">★ GitHub repository</a>
+        <a class="btn" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/CONTRIBUTING.md">Suggest a paper</a>
+        <a class="btn" href="#about">About the taxonomy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Filters">
+      <div class="search-row">
+        <input id="q" type="search" placeholder="Search names, titles, authors, notes…  (press / to focus)" autocomplete="off" aria-label="Search papers">
+        <select id="sort" aria-label="Sort order">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <nav class="tabs" id="stages" aria-label="Lifecycle stage"></nav>
+      <div class="chips" id="subcats" aria-label="Subcategory"></div>
+      <div class="filter-row">
+        <div class="chips small" id="years" aria-label="Year"></div>
+        <label class="toggle"><input type="checkbox" id="hascode"> <span>Has code</span></label>
+        <button id="reset" class="link-btn" type="button">Reset filters</button>
+      </div>
+    </section>
+
+    <p class="cat-desc" id="catdesc"></p>
+    <p class="count" id="count"></p>
+    <ol class="list" id="list"></ol>
+    <p class="empty" id="empty" hidden>No papers match these filters.</p>
+
+    <section id="about" class="about">
+      <h2>About the taxonomy</h2>
+      <p>The list follows the survey <em>From Trajectories to Experience: A Survey of Experience-Driven LLM Agents</em>
+        (preprint coming soon). <b>Agent experience</b> is action-guiding information grounded in task-execution trajectories and retained to guide later episodes where it applies:
+        a trajectory kept as a precedent, a semantic lesson, or a reusable procedure.</p>
+      <figure>
+        <img src="assets/lifecycle.png" alt="Lifecycle of agent experience: trajectories and feedback feed experience formation; maintenance and organization manage an experience repository; utilization supplies selected and adapted guidance that steers subsequent execution." loading="lazy">
+        <figcaption>The four lifecycle functions around an experience repository.</figcaption>
+      </figure>
+      <ul class="defs">
+        <li><b class="s-formation">Formation</b> selects or derives candidate experience from trajectories.</li>
+        <li><b class="s-organization">Organization</b> makes it accessible.</li>
+        <li><b class="s-utilization">Utilization</b> applies it to current decisions or internalizes it into model parameters.</li>
+        <li><b class="s-maintenance">Maintenance</b> admits, consolidates, revises, and retires it as evidence accumulates.</li>
+      </ul>
+      <p class="muted">Notes on each entry summarize how the survey characterizes the work. Systems the survey marks as <em>adjacent</em>
+        (general or conversational memory outside its experience scope) say so in their notes.</p>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Data: <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/data/papers.yaml">data/papers.yaml</a> ·
+      Licensed <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/LICENSE">CC0-1.0</a> ·
+      Corrections and additions welcome via <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/issues">issues</a> or pull requests.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

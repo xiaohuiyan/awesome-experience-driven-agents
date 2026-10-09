@@ -1,0 +1,4385 @@
+{
+ "categories": [
+  {
+   "id": "surveys",
+   "title": "Surveys and Position Papers",
+   "parent": null,
+   "description": "Related surveys on agent memory, skills, and self-evolving agents, plus position papers.",
+   "emoji": "📚"
+  },
+  {
+   "id": "foundations",
+   "title": "Foundations and Related Directions",
+   "parent": null,
+   "description": "Mechanisms that experience-driven agents build on (acting, retrieval, cognitive architectures) and neighbouring paradigms such as case-based reasoning, reinforcement learning, and self-improvement.",
+   "emoji": "🧱"
+  },
+  {
+   "id": "formation",
+   "title": "Experience Formation",
+   "parent": null,
+   "description": "Selecting or deriving candidate experience from task-execution trajectories and their feedback. The survey distinguishes three forms by how the experience guides behaviour.",
+   "emoji": "🧪"
+  },
+  {
+   "id": "formation.trajectory",
+   "title": "Trajectory-Level Experience",
+   "parent": "formation",
+   "description": "Trajectories kept as precedents, selected, annotated, compressed, or reconstructed for reuse.",
+   "emoji": ""
+  },
+  {
+   "id": "formation.semantic",
+   "title": "Semantic-Level Experience",
+   "parent": "formation",
+   "description": "Lessons, insights, rules, and guidelines abstracted through reflection, trajectory comparison, and cross-trajectory generalization.",
+   "emoji": ""
+  },
+  {
+   "id": "formation.procedural",
+   "title": "Procedural-Level Experience",
+   "parent": "formation",
+   "description": "Reusable workflows, skills, and programs extracted, synthesized, and verified from execution.",
+   "emoji": ""
+  },
+  {
+   "id": "organization",
+   "title": "Experience Organization",
+   "parent": null,
+   "description": "Making retained experience accessible, from flat stores to trees, graphs, and hierarchical graphs.",
+   "emoji": "🗂️"
+  },
+  {
+   "id": "organization.flat",
+   "title": "Flat Organization",
+   "parent": "organization",
+   "description": "Independent entries keyed for direct lookup, ranking, or utility weighting.",
+   "emoji": ""
+  },
+  {
+   "id": "organization.tree",
+   "title": "Tree-Structured Organization",
+   "parent": "organization",
+   "description": "Index trees that organize access to records, and content trees that organize relations within guidance.",
+   "emoji": ""
+  },
+  {
+   "id": "organization.graph",
+   "title": "Graph-Structured Organization",
+   "parent": "organization",
+   "description": "Record graphs, transition graphs, and skill graphs that connect precedents, operations, and capabilities.",
+   "emoji": ""
+  },
+  {
+   "id": "organization.hierarchical",
+   "title": "Hierarchical Graph Organization",
+   "parent": "organization",
+   "description": "Layered graphs that link units across roles, and nested graphs that open up the inside of a reusable unit.",
+   "emoji": ""
+  },
+  {
+   "id": "utilization",
+   "title": "Experience Utilization",
+   "parent": null,
+   "description": "Applying experience to current decisions: when to seek it, which to use, how to adapt it, how it shapes behaviour, and when to internalize it into model parameters.",
+   "emoji": "🎯"
+  },
+  {
+   "id": "utilization.triggering",
+   "title": "Experience Triggering",
+   "parent": "utilization",
+   "description": "Schedules, uncertainty signals, and learned policies that decide when to consult experience.",
+   "emoji": ""
+  },
+  {
+   "id": "utilization.selection",
+   "title": "Experience Selection",
+   "parent": "utilization",
+   "description": "Retrieval, reranking and filtering, and allocation of experience across multiple agents.",
+   "emoji": ""
+  },
+  {
+   "id": "utilization.adaptation",
+   "title": "Experience Adaptation",
+   "parent": "utilization",
+   "description": "Contextual grounding, guidance specialization, procedural reconfiguration, and feedback-guided revision before reuse.",
+   "emoji": ""
+  },
+  {
+   "id": "utilization.application",
+   "title": "Experience Application",
+   "parent": "utilization",
+   "description": "How guidance shapes interpretation, generation, procedure reuse, decision-making, and evaluation.",
+   "emoji": ""
+  },
+  {
+   "id": "utilization.internalization",
+   "title": "Experience Internalization",
+   "parent": "utilization",
+   "description": "Moving explicit guidance into model parameters through training on experience-shaped trajectories.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance",
+   "title": "Experience Maintenance",
+   "parent": null,
+   "description": "Admitting, consolidating, revising, and retiring experience as evidence accumulates, and keeping its evolution safe.",
+   "emoji": "🛠️"
+  },
+  {
+   "id": "maintenance.admission",
+   "title": "Experience Admission",
+   "parent": "maintenance",
+   "description": "Success gates, consistency checks, and replay-based validation before experience enters the repository.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance.consolidation",
+   "title": "Experience Consolidation",
+   "parent": "maintenance",
+   "description": "Integrating repeated and related experience through targeted or region-level merging.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance.refinement",
+   "title": "Experience Refinement",
+   "parent": "maintenance",
+   "description": "Diagnosing defects in retained guidance, revising it, and validating the revision.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance.retirement",
+   "title": "Experience Retirement",
+   "parent": "maintenance",
+   "description": "Reducing the availability of stale or low-utility experience by pruning, down-weighting, or archiving.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance.coordination",
+   "title": "Coordinating Maintenance",
+   "parent": "maintenance",
+   "description": "Learned or joint policies that align memory operations with formation and retrieval.",
+   "emoji": ""
+  },
+  {
+   "id": "maintenance.safety",
+   "title": "Safeguarding Experience Evolution",
+   "parent": "maintenance",
+   "description": "Poisoning attacks, provenance, rollback, repair, and unlearning for evolving experience.",
+   "emoji": ""
+  },
+  {
+   "id": "evaluation",
+   "title": "Evaluation and Benchmarks",
+   "parent": null,
+   "description": "Evaluating intrinsic experience quality, the utilization process, and downstream effects, separating fixed experience reuse from feedback-driven sustained improvement and improvement of the learning mechanism.",
+   "emoji": "📏"
+  },
+  {
+   "id": "evaluation.reliability",
+   "title": "Scoring Reliability and Feedback Access",
+   "parent": "evaluation",
+   "description": "Whether the scores and feedback that experience is learned and judged from can be trusted.",
+   "emoji": ""
+  },
+  {
+   "id": "evaluation.intrinsic",
+   "title": "Intrinsic Experience Quality",
+   "parent": "evaluation",
+   "description": "Correctness, evidential support, coherence, and actionability of experience units and repositories.",
+   "emoji": ""
+  },
+  {
+   "id": "evaluation.process",
+   "title": "Utilization Process",
+   "parent": "evaluation",
+   "description": "Scoring triggering, selection, adaptation, and application, and attributing behaviour to supplied experience.",
+   "emoji": ""
+  },
+  {
+   "id": "evaluation.downstream",
+   "title": "Downstream Effects and Transfer",
+   "parent": "evaluation",
+   "description": "Immediate effectiveness of reuse, amortized cost, transfer, and harmful reuse.",
+   "emoji": ""
+  },
+  {
+   "id": "evaluation.sustained",
+   "title": "Sustained Improvement and Continual Learning",
+   "parent": "evaluation",
+   "description": "Benchmarks for updating experience over streams, regression and forgetting, and meta-level learning.",
+   "emoji": ""
+  },
+  {
+   "id": "app",
+   "title": "Applications",
+   "parent": null,
+   "description": "Experience-driven agents in seven application settings.",
+   "emoji": "🌐"
+  },
+  {
+   "id": "app.qa",
+   "title": "Question Answering",
+   "parent": "app",
+   "description": "Solution templates, search lessons, and tool-use procedures for QA and reasoning.",
+   "emoji": ""
+  },
+  {
+   "id": "app.swe",
+   "title": "Software Engineering",
+   "parent": "app",
+   "description": "Issue resolution, environment setup, and repair with trajectory- or human-derived experience.",
+   "emoji": ""
+  },
+  {
+   "id": "app.computer-use",
+   "title": "Computer Use",
+   "parent": "app",
+   "description": "Web, desktop, and mobile agents that retain workflows, skills, and interface knowledge.",
+   "emoji": ""
+  },
+  {
+   "id": "app.recsys",
+   "title": "Recommender Systems",
+   "parent": "app",
+   "description": "User-level and shared guidance revised from recommendation feedback.",
+   "emoji": ""
+  },
+  {
+   "id": "app.embodied",
+   "title": "Embodied Control",
+   "parent": "app",
+   "description": "Plans, skills, and lessons reused by embodied and robotic agents.",
+   "emoji": ""
+  },
+  {
+   "id": "app.science",
+   "title": "Scientific Research",
+   "parent": "app",
+   "description": "Data science, machine-learning engineering, and AI-scientist agents.",
+   "emoji": ""
+  },
+  {
+   "id": "app.finance",
+   "title": "Financial Trading and Forecasting",
+   "parent": "app",
+   "description": "Reflection-driven trading and event forecasting agents.",
+   "emoji": ""
+  }
+ ],
+ "papers": [
+  {
+   "id": "fu2026segos",
+   "name": "SE-GoS",
+   "title": "SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale",
+   "authors": "Fu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-09",
+   "paper": "https://arxiv.org/abs/2609.08228",
+   "code": null,
+   "note": "Self-evolving graph-of-skills revising topology, edge weights, and node descriptions for large skill libraries.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "lu2026proceduralgraphs",
+   "name": "Procedural Graphs",
+   "title": "Procedural Graphs: Self-Evolving Execution Structures for LLM Agents",
+   "authors": "Lu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-09",
+   "paper": "https://arxiv.org/abs/2609.09153",
+   "code": null,
+   "note": "Self-evolving execution graphs whose transitions carry conditions, guidance, and pitfalls.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "yao2026executionunlearning",
+   "name": "Execution-State Unlearning",
+   "title": "Forgetting Without Restarting: Execution-State Unlearning for Stateful LLM Agents",
+   "authors": "Yao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-09",
+   "paper": "https://arxiv.org/abs/2609.04875",
+   "code": null,
+   "note": "Forgetting without restarting: replays affected computation to remove residues of target information.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "chen2026envpilot",
+   "name": "EnvPilot",
+   "title": "EnvPilot: Systematic Design and Evaluation of an Experience-Augmented Agent for Software Environment Setup",
+   "authors": "Chen et al.",
+   "venue": "TOSEM 2026",
+   "year": 2026,
+   "date": "2026-09",
+   "paper": "https://arxiv.org/abs/2609.07357",
+   "code": null,
+   "note": "Experience-augmented environment setup agent with problem–solution–action entries.",
+   "categories": [
+    "app.swe"
+   ]
+  },
+  {
+   "id": "ding2026apex",
+   "name": "APEx",
+   "title": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+   "authors": "Ding et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-09",
+   "paper": "https://arxiv.org/abs/2609.02253",
+   "code": null,
+   "note": "Distills procedural experience (search steps, skill documents) for adaptive deep-research question answering.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "tang2026wikiskill",
+   "name": "WikiSkill",
+   "title": "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution",
+   "authors": "Tang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.27454",
+   "code": null,
+   "note": "Compiles agent experience into persistent wiki knowledge that drives validated skill evolution with rollback.",
+   "categories": [
+    "formation.procedural",
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "liu2026skilllensvsc",
+   "name": "Visual Skill Cards",
+   "title": "SkillLens: Visual Skill Cards for Retrieval-Augmented GUI Action Prediction and On-Policy Distillation",
+   "authors": "Liu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.10775",
+   "code": null,
+   "note": "Skill cards with screenshots and applicability cues for retrieval-augmented GUI action prediction.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "deng2026toe",
+   "name": "Tree-of-Experience",
+   "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
+   "authors": "Deng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.09044",
+   "code": null,
+   "note": "Hierarchical experience refined from general reasoning dimensions to specific directions, with reliability.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "elyadouni2026tracecompiler",
+   "name": "TraceCompiler",
+   "title": "TraceCompiler: Skill-Guided Mining and Compilation of LLM Agent Traces into Mostly Deterministic Workflows",
+   "authors": "El Yadouni et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.02680",
+   "code": null,
+   "note": "Mines tool-call traces and compiles them into mostly deterministic workflows with explicit argument bindings.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "xiao2026tarl",
+   "name": "TARL",
+   "title": "TARL: Transaction-Aware Reliable Ledgers for Executable Memory Management in Long-Term Agents",
+   "authors": "Xiao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.03699",
+   "code": null,
+   "note": "Transaction-aware ledgers that supervise whether memory operations produce the intended repository state.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "yang2026tangle",
+   "name": "TANGLE",
+   "title": "When Personal Memory Has No Single Answer: Evaluating LLM Agents under Irreducible Conflict",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.13921",
+   "code": null,
+   "note": "Evaluates agents under irreducible conflicts in personal memory.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "tan2026skillzip",
+   "name": "SkillZip",
+   "title": "SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries",
+   "authors": "Tan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.05604",
+   "code": null,
+   "note": "Contract-preserving compression that factors recurring skill sections into macros with source pointers.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "lu2026skillsentry",
+   "name": "SkillSentry",
+   "title": "SkillSentry: Reliable Skill Execution for LLM Agents via Runtime Assurance",
+   "authors": "Lu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.09253",
+   "code": null,
+   "note": "Runtime assurance that checks skill dependencies and required steps against patterns from earlier runs.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "ying2026skilljack",
+   "name": "SkillJack",
+   "title": "SkillJack: Persistent Skill Backdoors in Self-Evolving Agents",
+   "authors": "Ying et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.03509",
+   "code": null,
+   "note": "Persistent skill backdoors that survive deletion of the poisoned trajectories.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "li2026skillaligner",
+   "name": "SkillAligner",
+   "title": "SkillAligner: Treating Retrieved Skills as Adaptable Drafts at Execution Time",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.06880",
+   "code": null,
+   "note": "Treats retrieved skills as adaptable drafts and aligns them to the task at execution time.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "han2026skilluse",
+   "name": "Skill-Use",
+   "title": "Skill-Use: Can LLMs Actually Use Skills in Agentic Harnesses?",
+   "authors": "Han et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.04828",
+   "code": null,
+   "note": "Can LLMs actually use skills? Scores triggering, compliance, and correct non-triggers.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "yang2026romerl",
+   "name": "RoMeRL",
+   "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.02508",
+   "code": "https://github.com/YOUNG-fnxm/RoMeRL",
+   "note": "Reduced-order utility states to balance feedback coverage and avoid the memory-reward trap.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "li2026queryconditionedreuse",
+   "name": "QCR",
+   "title": "Beyond Retrieval: Query-Conditioned Reuse of Long-Horizon Agent Trajectories",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.12847",
+   "code": null,
+   "note": "Query-conditioned reuse that distills a retrieved long-horizon trajectory into reuse notes with bindings and checks.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "chen2026poisonedevolution",
+   "name": "PoisonedEvolution",
+   "title": "When Experience Becomes Instruction: Trajectory Poisoning in Self-Evolving Agent Skill Systems",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.05563",
+   "code": null,
+   "note": "Trajectory poisoning that makes target behaviors look useful and general to skill evolvers.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "yang2026pathbench",
+   "name": "PATH-Bench",
+   "title": "PATH-Bench: Path-Dependent Evaluation of Lifelong Agents",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.01149",
+   "code": null,
+   "note": "Path-dependent evaluation of lifelong agents: forward/backward transfer and forgetting.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "wang2026memguard",
+   "name": "MemGuard",
+   "title": "MemGuard: Persisting Verifier Signals for LLM-Agent Memory Governance",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.21867",
+   "code": null,
+   "note": "Persists verifier signals for memory governance; unverified entries stay provisional.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "livingrag2026",
+   "name": "LivingRAG",
+   "title": "LivingRAG: Augmenting Graph RAG with Experience",
+   "authors": "Cui et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.25960",
+   "code": null,
+   "note": "Augments graph RAG with verified experience keyed by the knowledge-graph entities its retrieval activated.",
+   "categories": [
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "xu2026hyperskill",
+   "name": "HyperSkill",
+   "title": "HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory",
+   "authors": "Xu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.16114",
+   "code": null,
+   "note": "Hypergraph skill memory whose hyperedges keep the joint-use context and lesson of co-used skills.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "wu2026evomal",
+   "name": "EVOMAL",
+   "title": "EVOMAL: Self-Poisoning in Self-Evolving Coding Agents",
+   "authors": "Wu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.25776",
+   "code": null,
+   "note": "Self-poisoning: coding agents author new malicious skills from retrieved ones, persisting after withdrawal.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "yan2026benignalone",
+   "name": "EvoBreak",
+   "title": "Benign Alone, Harmful Together: Exploiting Experience Composition in Self-Evolving LLM Agents",
+   "authors": "Yan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.01759",
+   "code": null,
+   "note": "Benign alone, harmful together: exploits composition of individually benign experiences.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "xie2026edge",
+   "name": "EDGE",
+   "title": "EDGE: Experience-Distillation for Guided Exploration in Agentic Reinforcement Learning",
+   "authors": "Xie et al.",
+   "venue": "EMNLP 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.21946",
+   "code": null,
+   "note": "Experience distillation for guided exploration in agentic RL; deletes items whose rollout gain falls below a threshold.",
+   "categories": [
+    "maintenance.retirement",
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "yu2026dependencyrollback",
+   "name": "Dependency-Guided Rollback",
+   "title": "From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents",
+   "authors": "Yu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.10502",
+   "code": null,
+   "note": "Repairs faulty memories by replaying affected computation from recorded dependencies.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "feng2026crosstaskskill",
+   "name": "Cross-Task Skill Transfer",
+   "title": "Break It Down, Pass It On: Cross-Task Skill Transfer in LLM Agents",
+   "authors": "Feng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.20274",
+   "code": null,
+   "note": "Finds subtask-level skills transfer more reliably across tasks than task-level skills.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "coevomem2026",
+   "name": "CoEvo-Mem",
+   "title": "CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents",
+   "authors": "Ye et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.01739",
+   "code": null,
+   "note": "Co-evolves a retrieval router and a graph memory bank with semantic, lexical, and temporal links.",
+   "categories": [
+    "organization.graph",
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "zhao2026coalitionaware",
+   "name": "Coalition-Aware Skill Reliability",
+   "title": "Coalition-Aware Skill Reliability for Self-Evolving Agents",
+   "authors": "Zhao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.22610",
+   "code": null,
+   "note": "Knockout analysis showing skill contributions depend on bank composition.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "li2026caskg",
+   "name": "CaSKG",
+   "title": "CaSKG: Counterfactual-Causal Skill Graphs for Scalable Agent Skill Retrieval",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.25500",
+   "code": "https://github.com/ZhiyuanLi218/Caskg",
+   "note": "Counterfactual-causal skill graphs: calibrates candidate skill relations with LLM-simulated counterfactual probes.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "kim2026agentmemorydistillation",
+   "name": "AMD",
+   "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+   "authors": "Kim et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.07169",
+   "code": "https://github.com/taeilkim2465/agentic_memory_distillation",
+   "note": "Teacher-built hierarchical memory for small agents; error-triggered retrieval of function-specific hints.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "lian2026admitor",
+   "name": "AdmitOR",
+   "title": "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling",
+   "authors": "Lian et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.15565",
+   "code": null,
+   "note": "Label-free certification: admits experience by agreement across independently built solutions.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "kevin2026aces",
+   "name": "ACES",
+   "title": "Evaluating Skills, Not Just Agents: Agentic Continuous Evaluation of Skills",
+   "authors": "Kevin et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-08",
+   "paper": "https://arxiv.org/abs/2608.20614",
+   "code": null,
+   "note": "Agentic continuous evaluation of skills: scores skill instructions for clarity, completeness, and failure handling.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "lin2026workflowlocalized",
+   "name": "Workflow-Localized Mechanism Learning",
+   "title": "Workflow-Localized Mechanism Learning: Attribution-Guided Repair and Knowledge Reuse for Structured Agent Skills",
+   "authors": "Lin et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.20999",
+   "code": null,
+   "note": "Attribution-guided repair bounded to workflow nodes, separating faulty rules from faulty compositions.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "fang2026toolatlas",
+   "name": "ToolAtlas",
+   "title": "ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory",
+   "authors": "Fang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.11126",
+   "code": null,
+   "note": "Tool-side memory merging tool-use traces with capability entries for learn-once, reuse-everywhere.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "xu2026stair",
+   "name": "STAIR",
+   "title": "Reusing Past Repairs Through Hierarchical Trajectory Abstraction for Coding Agents",
+   "authors": "Xu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.29658",
+   "code": null,
+   "note": "Abstracts past repair trajectories into trees from diagnostic actions to repair strategies for coding agents.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "chen2026slbench",
+   "name": "SLBench",
+   "title": "SLBench: Evaluating How LLM Agents Follow Logical Relations in Skills",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.09016",
+   "code": null,
+   "note": "Evaluates whether agents follow logical relations (prerequisites, exceptions) inside skills.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "fan2026rrm",
+   "name": "RRM",
+   "title": "RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning",
+   "authors": "Fan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.28156",
+   "code": null,
+   "note": "Reflective retrieval memory: lessons from unhelpful searches guide query rewriting in long-horizon multimodal reasoning.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "kang2026retainconsolidate",
+   "name": "Retain or Consolidate?",
+   "title": "Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory",
+   "authors": "Kang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.17545",
+   "code": null,
+   "note": "Budget-dependent choice between retaining raw evidence and consolidating it.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "sun2026opsmem",
+   "name": "OpsMem",
+   "title": "OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis",
+   "authors": "Sun et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.11357",
+   "code": null,
+   "note": "Dual-memory failure diagnosis linking candidate causes to supporting and contradicting evidence.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "dong2026misscore",
+   "name": "Mis-Scored CUAs",
+   "title": "How Benchmarks Mis-Score Computer-Use Agents",
+   "authors": "Dong et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.28367",
+   "code": null,
+   "note": "Audits how benchmarks mis-score computer-use agents: evaluator false negatives and broken tasks.",
+   "categories": [
+    "evaluation.reliability"
+   ]
+  },
+  {
+   "id": "chen2026memsecbench",
+   "name": "MemSecBench",
+   "title": "MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.27080",
+   "code": null,
+   "note": "Tracks memory poisoning from persistence to consequence and selective repair.",
+   "categories": [
+    "maintenance.safety",
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "mempoison2026",
+   "name": "MemPoison",
+   "title": "MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents",
+   "authors": "Gao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.14651",
+   "code": null,
+   "note": "Uncovers persistent memory threats and structural blind spots in LLM agents.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "xu2026memoryprovenance",
+   "name": "Memory Provenance Laundering",
+   "title": "Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory",
+   "authors": "Xu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.29167",
+   "code": null,
+   "note": "Non-amplification firewall against consolidation turning low-trust observations into trusted history.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "jiang2026memcon",
+   "name": "MemCon",
+   "title": "Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents",
+   "authors": "Jiang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.13591",
+   "code": null,
+   "note": "Memory as a controlled process: a bandit chooses whether and how much to retrieve from task success.",
+   "categories": [
+    "utilization.triggering"
+   ]
+  },
+  {
+   "id": "hao2026hiskill",
+   "name": "HiSkill",
+   "title": "HiSkill: Empowering LLM Agents with Hierarchical Skill Graphs",
+   "authors": "Hao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.25853",
+   "code": null,
+   "note": "Hierarchical skill graphs linking trajectory-derived skills to parameterized atomic operations with transition and recovery relations.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "zhou2026filesystem",
+   "name": "Filesystem Memory",
+   "title": "Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability",
+   "authors": "Zhou et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.26637",
+   "code": null,
+   "note": "Study of filesystem-based memory and skills: organization, evolution, and sustainability.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "gao2026evoagentbench",
+   "name": "EvoAgentBench",
+   "title": "EvoAgentBench: Benchmarking Agent Self-Evolution via Ability Transfer",
+   "authors": "Gao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.05202",
+   "code": null,
+   "note": "Benchmarks self-evolution via ability transfer against a curated ability reference.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "emg2026",
+   "name": "EMG",
+   "title": "Experience Memory Graph: One-Shot Error Correction for Agents",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.13884",
+   "code": null,
+   "note": "Experience Memory Graph: matches decision graphs across tasks and verbalizes shared subgraphs as cross-task insights.",
+   "categories": [
+    "formation.semantic",
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "zeng2026criticexperiencebank",
+   "name": "Critic Experience Bank",
+   "title": "Critic Experience Bank: Self-Evolving Step-Level Confidence Estimation for LLM Agents",
+   "authors": "Zeng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.12397",
+   "code": null,
+   "note": "Step-level confidence estimation scored against earlier productive and unproductive actions.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "zhang2026consistencygate",
+   "name": "ConsistencyGate",
+   "title": "ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2607.22962",
+   "code": null,
+   "note": "Self-consistency admission control that blocks memory contamination.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "yan2026agentstream",
+   "name": "AgentStream",
+   "title": "AgentStream: How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?",
+   "authors": "Yan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-07",
+   "paper": "https://arxiv.org/abs/2608.00155",
+   "code": "https://github.com/Jasper-Yan/AgentStream",
+   "note": "Self-evolving agents under streaming tasks; rankings change with stream composition.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "hajimiri2026worthtokens",
+   "name": "Worth Their Tokens?",
+   "title": "Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents",
+   "authors": "Hajimiri et al.",
+   "venue": "EMNLP 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.15017",
+   "code": null,
+   "note": "Budget-constrained study of whether online skill and memory modules pay off for web agents.",
+   "categories": [
+    "evaluation.downstream"
+   ]
+  },
+  {
+   "id": "zhou2026trace",
+   "name": "TRACE",
+   "title": "Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents",
+   "authors": "Zhou et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.13174",
+   "code": "https://github.com/YujunZhou/tellonce",
+   "note": "Compiles user corrections into runtime enforcement programs that check coding agents' later actions.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "he2026skillmigrator",
+   "name": "SkillMigrator",
+   "title": "Beyond Domains: Reusing Web Skills via Transferable Interaction Patterns",
+   "authors": "He et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.17645",
+   "code": null,
+   "note": "Separates reusable web interaction patterns from site-specific bindings and grounds them on the live page.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "bai2026skilldag",
+   "name": "SkillDAG",
+   "title": "SkillDAG: Self-Evolving Typed Skill Graphs for LLM Skill Selection at Scale",
+   "authors": "Bai et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.03056",
+   "code": null,
+   "note": "Self-evolving typed skill graph with dependency, composition, similarity, specialization, and conflict relations.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "chen2026skillcat",
+   "name": "SkillCAT",
+   "title": "SkillCAT: Contrastive, Assessment-Augmented and Topology-Aware Skill Self-Evolution for LLM Agents",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.13317",
+   "code": null,
+   "note": "Contrasts successful and failed runs of a task, proposes skill patches, and replay-checks them before merging.",
+   "categories": [
+    "formation.procedural",
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "guo2026skilldisco",
+   "name": "Skill-DisCo",
+   "title": "Skill-DisCo: Distilling and Compiling Agent Traces into Reusable Procedural Skills",
+   "authors": "Guo et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.26669",
+   "code": null,
+   "note": "Distills and compiles agent traces into reusable procedural skills with learned internal graphs.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "zheng2026seagym",
+   "name": "SEAGym",
+   "title": "SEAGym: An Evaluation Environment for Self-Evolving LLM Agents",
+   "authors": "Zheng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.17546",
+   "code": null,
+   "note": "Evaluation environment snapshotting self-evolving harnesses on held-out and replayed tasks.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "reskill2026",
+   "name": "ReSkill",
+   "title": "ReSkill: Reconciling Skill Creation with Policy Optimization in Agentic RL",
+   "authors": "He et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.01619",
+   "code": null,
+   "note": "Reconciles skill creation with policy optimization in agentic RL so skills track the changing executor.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "ma2026proplay",
+   "name": "ProPlay",
+   "title": "ProPlay: Procedural World Models for Self-Evolving LLM Agents",
+   "authors": "Ma et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.12780",
+   "code": null,
+   "note": "Procedural world model assembling a task-specific path of reusable procedures with reliability records.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "dai2026metis",
+   "name": "Metis",
+   "title": "Metis: Bridging Text and Code Memory for Self-Evolving Agents",
+   "authors": "Dai et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.24151",
+   "code": null,
+   "note": "Bridges text and code memory: compiles repeatedly selected textual plans into parameterized code helpers.",
+   "categories": [
+    "formation.procedural",
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "hsu2026horma",
+   "name": "HORMA",
+   "title": "Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents",
+   "authors": "Hsu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.11680",
+   "code": null,
+   "note": "Filesystem-like hierarchy navigated by an RL-trained retrieval agent (adjacent: working memory).",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "zhu2026escaping",
+   "name": "EDV",
+   "title": "Escaping the Self-Confirmation Trap: An Execute-Distill-Verify Paradigm for Agentic Experience Learning",
+   "authors": "Zhu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.24428",
+   "code": null,
+   "note": "Execute–distill–verify: heterogeneous agents attempt a task and a separate distiller integrates their trajectories into lessons.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "zai2026doctrace",
+   "name": "DocTrace",
+   "title": "Trace Only What You Need: Structure-Aware On-Demand Hypergraph Memory for Long-Document Question Answering",
+   "authors": "Zai et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.10921",
+   "code": null,
+   "note": "On-demand hypergraph memory that expands question patterns into retained reasoning sub-plans.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "deltamem2026",
+   "name": "DeltaMem",
+   "title": "DELTAMEM: Incremental Experience Memory for LLM Agents via Residual Trees",
+   "authors": "Tan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.03083",
+   "code": null,
+   "note": "Residual trees: children store only their changes to ancestor procedures; variants reconstructed from the path.",
+   "categories": [
+    "organization.tree",
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "chen2026rethinkinginternalization",
+   "name": "Continual Internalization",
+   "title": "Rethinking Continual Experience Internalization for Self-Evolving LLM Agents",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.04703",
+   "code": "https://github.com/RUCBM/ExpInternalization",
+   "note": "Rethinks continual experience internalization; step-wise principle injection sustains gains across rounds.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "agentcl",
+   "name": "AgentCL",
+   "title": "AgentCL: Toward Rigorous Evaluation of Continual Learning in Language Agents",
+   "authors": "Shu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.02461",
+   "code": null,
+   "note": "Rigorous continual-learning evaluation for language agents with frozen replay and shifted deployment.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "zhou2026agentnativememory",
+   "name": "Agent-Native Memory",
+   "title": "Are We Ready For An Agent-Native Memory System?",
+   "authors": "Zhou et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.24775",
+   "code": "https://github.com/OpenDataBox/MemoryData",
+   "note": "Asks whether we are ready for agent-native memory systems; studies update scheduling and availability delay.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "belikova2026procedural",
+   "name": "AFTER",
+   "title": "Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation",
+   "authors": "Belikova et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.23127",
+   "code": "https://github.com/DavydenkoGr/AFTER",
+   "note": "Managing procedural memory: control, adaptation, and evaluation with versioned skill files.",
+   "categories": [
+    "evaluation.process",
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "zhang2026adamem",
+   "name": "AdaMEM",
+   "title": "AdaMEM: Test-Time Adaptive Memory for Language Agents",
+   "authors": "Zhang et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-06",
+   "paper": "https://arxiv.org/abs/2606.05684",
+   "code": null,
+   "note": "Test-time adaptive memory that synthesizes temporary state-specific strategies from retrieved trajectories.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "shao2026usablememory",
+   "name": "Usable Memory",
+   "title": "When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory",
+   "authors": "Shao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.07313",
+   "code": null,
+   "note": "Scale-conditioned evaluation: when stored evidence stops being usable as memory grows.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "liu2026skillsvote",
+   "name": "SkillsVote",
+   "title": "SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution",
+   "authors": "Liu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.18401",
+   "code": "https://github.com/MemTensor/skills-vote",
+   "note": "Lifecycle governance of agent skills from collection and recommendation to evolution.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "liu2026skillrevise",
+   "name": "SkillRevise",
+   "title": "SkillRevise: Improving LLM-Authored Agent Skills via Trace-Conditioned Skill Revision",
+   "authors": "Liu et al.",
+   "venue": "EMNLP Findings 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2606.01139",
+   "code": null,
+   "note": "Trace-conditioned revision of LLM-authored skills with behavioral checks before replacement.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "skillret",
+   "name": "SkillRet",
+   "title": "SkillRet: A Large-Scale Benchmark for Skill Retrieval in LLM Agents",
+   "authors": "Kang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.05726",
+   "code": null,
+   "note": "Large-scale benchmark for skill retrieval in LLM agents.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "yang2026skillopt",
+   "name": "SkillOpt",
+   "title": "SkillOpt: Executive Strategy for Self-Evolving Agent Skills",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.23904",
+   "code": "https://github.com/microsoft/SkillOpt",
+   "note": "An optimizer proposes bounded skill edits from a frozen executor's scored trajectories, kept only if held-out score improves.",
+   "categories": [
+    "formation.procedural",
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "pu2026skillops",
+   "name": "SkillOps",
+   "title": "SkillOps: Managing LLM Agent Skill Libraries as Self-Maintaining Software Ecosystems",
+   "authors": "Pu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.13716",
+   "code": null,
+   "note": "Manages skill libraries as self-maintaining software ecosystems with explicit contracts.",
+   "categories": [
+    "maintenance.refinement",
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "miao2026skilllens",
+   "name": "SkillLens",
+   "title": "SkillLens: Adaptive Multi-Granularity Skill Reuse for Cost-Efficient LLM Agents",
+   "authors": "Miao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.08386",
+   "code": null,
+   "note": "Multi-granularity skill reuse with a verifier that accepts, decomposes, rewrites, or skips partially relevant skills.",
+   "categories": [
+    "utilization.selection",
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "skillevolbench2026",
+   "name": "SkillEvolBench",
+   "title": "SkillEvolBench: Benchmarking the Evolution from Episodic Experience to Procedural Skills",
+   "authors": "Lei et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.24117",
+   "code": null,
+   "note": "Benchmarks evolution from episodic experience to procedural skills under deployment shifts.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "yu2026skilladaptor",
+   "name": "SkillAdaptor",
+   "title": "SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories",
+   "authors": "Yu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2606.01311",
+   "code": null,
+   "note": "Locates the earliest actionable fault and revises implicated skills only if aggregate outcomes do not drop.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "skill05",
+   "name": "Skill0.5",
+   "title": "Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning",
+   "authors": "Zhu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.28424",
+   "code": "https://github.com/JasonZhujp/Skill0_5",
+   "note": "Joint skill internalization and utilization: distills general strategies while retrieving task-specific skills.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "sage2026",
+   "name": "SAGE",
+   "title": "SAGE: A Self-Evolving Agentic Graph-Memory Engine for Structure-Aware Associative Memory",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.12061",
+   "code": null,
+   "note": "Self-evolving graph-memory engine that updates indexes and relations when memories change.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "dai2026recmem",
+   "name": "RecMem",
+   "title": "RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents",
+   "authors": "Dai et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.16045",
+   "code": null,
+   "note": "Recurrence-based consolidation that waits for related evidence to accumulate before writing.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "choi2026preping",
+   "name": "PREPING",
+   "title": "PREPING: Building Agent Memory without Tasks",
+   "authors": "Choi et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.13880",
+   "code": "https://github.com/Dozi01/PREPING",
+   "note": "Builds agent memory without tasks through feasible practice, admitting informative failures.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "peam2026",
+   "name": "PEAM",
+   "title": "PEAM: Parametric Embodied Agent Memory through Contrastive Internalization of Experience in Minecraft",
+   "authors": "Guo et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.27762",
+   "code": null,
+   "note": "Parametric embodied agent memory via contrastive internalization of experience in Minecraft.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "oep2026",
+   "name": "OEP",
+   "title": "OEP: Poisoning Self-Evolving LLM Agents via Locally Correct but Non-Transferable Experiences",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.18930",
+   "code": null,
+   "note": "Poisons self-evolving agents with locally correct but non-transferable experiences.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "shao2026nsi",
+   "name": "NSI",
+   "title": "Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks",
+   "authors": "Shao et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.01293",
+   "code": null,
+   "note": "Neuro-symbolic programmatic skill induction that lifts traces to logic for long-horizon tasks.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "museautoskill2026",
+   "name": "MUSE-Autoskill",
+   "title": "MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation",
+   "authors": "Lin et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.27366",
+   "code": null,
+   "note": "Skill creation, memory, management, and evaluation driven by generated unit tests.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "mrmmia2026",
+   "name": "MRMMIA",
+   "title": "MRMMIA: Membership Inference Attacks on Memory in Chat Agents",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.27825",
+   "code": null,
+   "note": "Membership inference attacks revealing what chat-agent memory retained.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "learntoretrieve2026",
+   "name": "MERIT",
+   "title": "Learning to Retrieve: Dual-Level Long-Term Memory for Text-to-SQL Agents",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2606.00547",
+   "code": null,
+   "note": "Dual-level long-term memory for Text-to-SQL agents: full interactions plus step-level examples.",
+   "categories": [
+    "app.qa"
+   ]
+  },
+  {
+   "id": "memorepair2026",
+   "name": "MemoRepair",
+   "title": "MemoRepair: Barrier-First Cascade Repair in Agentic Memory",
+   "authors": "Zhao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.07242",
+   "code": null,
+   "note": "Barrier-first cascade repair that withdraws affected descendants and republishes validated successors.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "ouyang2026memlineage",
+   "name": "MemLineage",
+   "title": "MemLineage: Lineage-Guided Enforcement for LLM Agent Memory",
+   "authors": "Ouyang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.14421",
+   "code": null,
+   "note": "Lineage-guided enforcement refusing sensitive actions whose justification descends from external sources.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "memaudit",
+   "name": "MEMAUDIT",
+   "title": "MEMAUDIT: An Exact Package-Oracle Evaluation Protocol for Budgeted Long-Term LLM Memory Writing",
+   "authors": "Bhargava et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.02199",
+   "code": null,
+   "note": "Exact package-oracle protocol for budgeted long-term memory writing.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "longmemevalv2",
+   "name": "LongMemEval-V2",
+   "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
+   "authors": "Wu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.12493",
+   "code": "https://github.com/xiaowu0162/LongMemEval-V2",
+   "note": "Long-term agent memory evaluation toward experienced colleagues, isolating evidence gathering from web-agent histories.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "shalev2026training",
+   "name": "Learning from Experience",
+   "title": "Training Language Agents to Learn from Experience",
+   "authors": "Shalev et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.20477",
+   "code": null,
+   "note": "Trains language agents to learn from experience across episodes.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "dixit2026honestlying",
+   "name": "Honest Lying",
+   "title": "Honest Lying: Understanding Memory Confabulation in Reflexive Agents",
+   "authors": "Dixit et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.29463",
+   "code": null,
+   "note": "Studies memory confabulation in reflexive agents: do retained reflections name the right target?",
+   "categories": [
+    "evaluation.intrinsic",
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "storagetoexperience2026",
+   "name": "From Storage to Experience",
+   "title": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms",
+   "authors": "Luo et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.06716",
+   "code": "https://github.com/FeishuLuo/Evolving-LLM-Agent-Memory-Survey",
+   "note": "Traces agent memory through storing, reflecting on, and abstracting trajectories into experience.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "bogdanov2026forge",
+   "name": "FORGE",
+   "title": "FORGE: Self-Evolving Agent Memory With No Weight Updates via Population Broadcast",
+   "authors": "Bogdanov et al.",
+   "venue": "CAIS 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.16233",
+   "code": null,
+   "note": "Population-based memory evolution without weight updates by broadcasting the best instance's memory.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "zhang2026faultymemories",
+   "name": "Faulty Memories",
+   "title": "Useful Memories Become Faulty When Continuously Updated by LLMs",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.12978",
+   "code": null,
+   "note": "Shows useful memories degrade when continuously rewritten by LLMs; utility rises then declines.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "expweaver2026",
+   "name": "ExpWeaver",
+   "title": "Rethinking Experience Utilization in Self-Evolving Language Model Agents",
+   "authors": "Zhao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.07164",
+   "code": null,
+   "note": "Rethinks experience utilization; the agent gates retrieval itself by emitting a [Retrieve] token.",
+   "categories": [
+    "utilization.triggering"
+   ]
+  },
+  {
+   "id": "expgraph2026",
+   "name": "ExpGraph",
+   "title": "ExpGraph: Model-Agnostic Experience Learning with Graph-Structured Memory for LLM Agents",
+   "authors": "Feng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.30712",
+   "code": null,
+   "note": "Graph-structured memory of skills and failure lessons; expands matched seeds by diffusion and utility-aware ranking.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "jin2026exg",
+   "name": "EXG",
+   "title": "EXG: Self-Evolving Agents with Experience Graphs",
+   "authors": "Jin et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.17721",
+   "code": null,
+   "note": "Experience graphs whose directed fixed_by edges lead from failed attempts to observed corrections.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "evomembench",
+   "name": "EvoMemBench",
+   "title": "EvoMemBench: Benchmarking Agent Memory from a Self-Evolving Perspective",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.18421",
+   "code": null,
+   "note": "Benchmarks agent memory from a self-evolving perspective, separating within- and cross-episode reuse.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "fan2026evolvingrl",
+   "name": "Evolving-RL",
+   "title": "Evolving-RL: End-to-End Optimization of Experience-Driven Self-Evolving Capability within Agents",
+   "authors": "Fan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.10663",
+   "code": null,
+   "note": "End-to-end RL training one policy to both extract skills and solve tasks with them.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "ju2026embodiskill",
+   "name": "EmbodiSkill",
+   "title": "EmbodiSkill: Skill-Aware Reflection for Self-Evolving Embodied Agents",
+   "authors": "Ju et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.10332",
+   "code": null,
+   "note": "Skill-aware reflection that edits defective skills, emphasizes unfollowed ones, and abstains on weak evidence.",
+   "categories": [
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "qin2026_eam_gui",
+   "name": "EAM",
+   "title": "Executable Agentic Memory for GUI Agent",
+   "authors": "Qin et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.12294",
+   "code": null,
+   "note": "Executable agentic memory: a GUI logic graph built from exploration and searched with learned values.",
+   "categories": [
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "doselfevolving2025",
+   "name": "Do Self-Evolving Agents Forget?",
+   "title": "Do Self-Evolving Agents Forget? Capability Degradation and Preservation in Lifelong LLM Agent Adaptation",
+   "authors": "Yu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.09315",
+   "code": null,
+   "note": "Capability degradation and preservation in lifelong agent adaptation.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "codeskill2026",
+   "name": "CODESKILL",
+   "title": "CODESKILL: Learning Self-Evolving Skills for Coding Agents",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.25430",
+   "code": null,
+   "note": "Learns add/merge/drop decisions for coding skills from verifier gains over a no-skill baseline.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "benchtrace",
+   "name": "BenchTrace",
+   "title": "BenchTrace: A Benchmark for Testing Reflection Ability and Controlled Evolution in LLM Agents",
+   "authors": "Huang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.29225",
+   "code": null,
+   "note": "Benchmark for reflection ability and controlled evolution; compares predicted failure explanations with annotations.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "autodreamer2026",
+   "name": "Auto-Dreamer",
+   "title": "Auto-Dreamer: Learning Offline Memory Consolidation for Language Agents",
+   "authors": "Ye et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.20616",
+   "code": null,
+   "note": "Learned offline consolidation that rewrites a selected region of experience separately from per-session writing.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "zhou2026agentskills",
+   "name": "Agent Skills Survey",
+   "title": "A Comprehensive Survey on Agent Skills: Taxonomy, Techniques, and Applications",
+   "authors": "Zhou et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-05",
+   "paper": "https://arxiv.org/abs/2605.07358",
+   "code": null,
+   "note": "Treats agent skills as reusable procedural artifacts with a lifecycle of representation, acquisition, retrieval, and evolution.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "wang2026skillx",
+   "name": "SkillX",
+   "title": "SkillX: Automatically Constructing Skill Knowledge Bases for Agents",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.04804",
+   "code": "https://github.com/zjunlp/SkillX",
+   "note": "Builds planning, functional, and atomic skill levels from trajectories as a skill knowledge base.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "zhong2026skilllearnbench",
+   "name": "SkillLearnBench",
+   "title": "SkillLearnBench: Benchmarking Continual Learning Methods for Agent Skill Generation on Real-World Tasks",
+   "authors": "Zhong et al.",
+   "venue": "COLM 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.20087",
+   "code": "https://github.com/cxcscmu/SkillLearnBench",
+   "note": "Continual learning for skill generation on real tasks; self-feedback alone causes drift.",
+   "categories": [
+    "evaluation.sustained",
+    "evaluation.reliability"
+   ]
+  },
+  {
+   "id": "skillflow",
+   "name": "SkillFlow",
+   "title": "SkillFlow: Benchmarking Lifelong Skill Discovery and Evolution for Autonomous Agents",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.17308",
+   "code": "https://github.com/ZhangZi-a/SkillFlow",
+   "note": "Lifelong skill discovery and evolution benchmark scored along updating streams.",
+   "categories": [
+    "evaluation.sustained",
+    "evaluation.reliability"
+   ]
+  },
+  {
+   "id": "lu2026skill0",
+   "name": "SKILL0",
+   "title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+   "authors": "Lu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.02268",
+   "code": "https://github.com/ZJU-REAL/SkillZero",
+   "note": "In-context agentic RL that supplies helpful skills on a budget decaying to zero, internalizing them.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "tao2026sager",
+   "name": "SAGER",
+   "title": "SAGER: Self-Evolving User Policy Skills for Recommendation Agent",
+   "authors": "Tao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.14972",
+   "code": null,
+   "note": "Per-user natural-language policy skills revised by contrasting accepted items with ranked candidates.",
+   "categories": [
+    "app.recsys"
+   ]
+  },
+  {
+   "id": "yang2026psychagent",
+   "name": "PsychAgent",
+   "title": "PsychAgent: An Experience-Driven Lifelong Learning Agent for Self-Evolving Psychological Counselor",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.00931",
+   "code": null,
+   "note": "Lifelong counseling agent organizing paradigms, stages, meta-skills, and atomic skills as a tree.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "cai2026askneededproactiveretrieval",
+   "name": "ProactAgent",
+   "title": "Ask Only When Needed: Proactive Retrieval from Memory and Skills for Experience-Driven Lifelong Agents",
+   "authors": "Cai et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.20572",
+   "code": null,
+   "note": "Treats retrieval from memory and skills as a learned policy action, trained with prefix-matched process rewards.",
+   "categories": [
+    "utilization.triggering"
+   ]
+  },
+  {
+   "id": "memorytransfer2026",
+   "name": "Memory Transfer Learning",
+   "title": "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents",
+   "authors": "Kim et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.14004",
+   "code": "https://github.com/KangsanKim07/MemoryTransferLearning",
+   "note": "How memories transfer across domains and producer models in coding agents.",
+   "categories": [
+    "evaluation.downstream",
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "memevobench2026",
+   "name": "MemEvoBench",
+   "title": "MemEvoBench: Benchmarking Safety Risks from Memory Misevolution in LLM Agents",
+   "authors": "Xie et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.15774",
+   "code": null,
+   "note": "Benchmarks safety risks from memory misevolution across rounds.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "liu2026graphofskills",
+   "name": "Graph-of-Skills",
+   "title": "Graph-of-Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+   "authors": "Liu et al.",
+   "venue": "EMNLP 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.05333",
+   "code": "https://github.com/davidliuk/graph-of-skills",
+   "note": "Dependency-aware structural retrieval that recovers prerequisite skills from massive libraries under a budget.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "compressionspectrum2025",
+   "name": "Experience Compression Spectrum",
+   "title": "Experience Compression Spectrum: Unifying Memory, Skills, and Rules in LLM Agents",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.15877",
+   "code": null,
+   "note": "Position paper unifying memory, skills, and rules as points on one compression spectrum; motivates choosing an experience representation.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "evoskills2025",
+   "name": "CoEvoSkills",
+   "title": "CoEvoSkills: Self-Evolving Agent Skills via Co-Evolutionary Verification",
+   "authors": "Zhang et al.",
+   "venue": "COLM 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.01687",
+   "code": null,
+   "note": "Self-evolving skills via co-evolutionary verification; shows generated tests can be laxer than hidden ones.",
+   "categories": [
+    "evaluation.intrinsic",
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "clmovesmemory",
+   "name": "CL Moves to Memory",
+   "title": "When Continual Learning Moves to Memory: A Study of Experience Reuse in LLM Agents",
+   "authors": "Hu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.27003",
+   "code": null,
+   "note": "Controlled study of experience reuse when continual learning moves into memory.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "byterover2025",
+   "name": "ByteRover",
+   "title": "ByteRover: Agent-Native Memory Through LLM-Curated Hierarchical Context",
+   "authors": "Nguyen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-04",
+   "paper": "https://arxiv.org/abs/2604.01599",
+   "code": null,
+   "note": "Agent-native memory recording the reason for each curation operation (adjacent: conversational memory).",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "jiang2026xskill",
+   "name": "XSkill",
+   "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
+   "authors": "Jiang et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.12056",
+   "code": "https://github.com/XSkill-Agent/XSkill",
+   "note": "Continual learning from experience and skills in multimodal agents; rewrites retrieved skills to the current task.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "ni2026trace2skill",
+   "name": "Trace2Skill",
+   "title": "Trace2Skill: Distill Trajectory-Local Lessons into Transferable Agent Skills",
+   "authors": "Ni et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.25158",
+   "code": null,
+   "note": "Distills trajectory-local lessons into transferable skill directories via hierarchical patch merging.",
+   "categories": [
+    "formation.procedural",
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "chang2026memcollab",
+   "name": "MemCollab",
+   "title": "MemCollab: Cross-Model Memory Collaboration via Contrastive Trajectory Distillation",
+   "authors": "Chang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.23234",
+   "code": null,
+   "note": "Contrasts different backbone models' trajectories on the same task to distill transferable reasoning constraints.",
+   "categories": [
+    "formation.semantic",
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "zhang2026hyperagents",
+   "name": "Hyperagents",
+   "title": "Hyperagents",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.19461",
+   "code": "https://github.com/facebookresearch/Hyperagents",
+   "note": "Self-improving agents that also improve their own improvement procedure (meta-level self-improvement).",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "tan2026hmt",
+   "name": "HMT",
+   "title": "Enhancing Web Agents with a Hierarchical Memory Tree",
+   "authors": "Tan et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.07024",
+   "code": null,
+   "note": "Hierarchical memory tree of intents, stages, and action patterns for web agents.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "ferraz2026exprag",
+   "name": "ExpRAG",
+   "title": "Retrieval-Augmented LLM Agents: Learning to Learn from Experience",
+   "authors": "Ferraz et al.",
+   "venue": "EMNLP 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.18272",
+   "code": null,
+   "note": "Retrieval-augmented agents over a bank of full execution trajectories, refreshing history-based queries during execution.",
+   "categories": [
+    "formation.trajectory",
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "alzubi2026evoskill",
+   "name": "EvoSkill",
+   "title": "EvoSkill: Automated Skill Discovery for Multi-Agent Systems",
+   "authors": "Alzubi et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.02766",
+   "code": null,
+   "note": "Automated skill discovery for multi-agent systems, validating each proposed skill on held-out tasks.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "lyu2026_evoscientist",
+   "name": "EvoScientist",
+   "title": "EvoScientist: Towards Multi-Agent Evolving AI Scientists for End-to-End Scientific Discovery",
+   "authors": "Lyu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.08127",
+   "code": "https://github.com/EvoScientist/EvoScientist",
+   "note": "Multi-agent evolving AI scientist separating ideation memory from experimentation memory.",
+   "categories": [
+    "app.science"
+   ]
+  },
+  {
+   "id": "mao2026comam",
+   "name": "CoMAM",
+   "title": "Joint Optimization of Multi-agent Memory System",
+   "authors": "Mao et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.12631",
+   "code": null,
+   "note": "Joint optimization of extraction, profile, and answering agents in a multi-agent memory system.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "li2026agentskillos",
+   "name": "AgentSkillOS",
+   "title": "Organizing, Orchestrating, and Benchmarking Agent Skills at Ecosystem Scale",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.02176",
+   "code": "https://github.com/ynulihao/AgentSkillOS",
+   "note": "Capability tree over 200–200K public skills; tree retrieval approaches oracle skill selection.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "amac2026",
+   "name": "A-MAC",
+   "title": "Adaptive Memory Admission Control for LLM Agents",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-03",
+   "paper": "https://arxiv.org/abs/2603.04549",
+   "code": null,
+   "note": "Adaptive memory admission control scoring predicted usefulness, novelty, and recency (conversational memory).",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "umem2025",
+   "name": "UMEM",
+   "title": "UMEM: Unified Memory Extraction and Management Framework for Generalizable Memory",
+   "authors": "Ye et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.10652",
+   "code": null,
+   "note": "Unified memory extraction and management optimized by marginal utility over related queries.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "tame",
+   "name": "TAME",
+   "title": "TAME: A Trustworthy Test-Time Evolution of Agent Memory with Systematic Benchmarking",
+   "authors": "Cheng et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.03224",
+   "code": null,
+   "note": "Trustworthy test-time evolution of agent memory with systematic benchmarking (Trust-Memevo).",
+   "categories": [
+    "evaluation.sustained",
+    "evaluation.reliability"
+   ]
+  },
+  {
+   "id": "zhu2026swecontextbench",
+   "name": "SWE Context Bench",
+   "title": "SWE Context Bench: A Benchmark for Context Learning in Coding",
+   "authors": "Zhu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.08316",
+   "code": null,
+   "note": "Benchmark pairing issues with related earlier issues whose trajectories form a context pool.",
+   "categories": [
+    "app.swe"
+   ]
+  },
+  {
+   "id": "shen2026_subtask_memory",
+   "name": "Subtask-Level Memory",
+   "title": "Structurally Aligned Subtask-Level Memory for Software Engineering Agents",
+   "authors": "Shen et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.21611",
+   "code": null,
+   "note": "Structurally aligned memory for localization, diagnosis, modification, and verification in SWE agents.",
+   "categories": [
+    "app.swe"
+   ]
+  },
+  {
+   "id": "skillsbench",
+   "name": "SkillsBench",
+   "title": "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks",
+   "authors": "Li et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.12670",
+   "code": "https://github.com/benchflow-ai/skillsbench",
+   "note": "Benchmarks how well agent skills work across diverse tasks with deterministic verifiers.",
+   "categories": [
+    "evaluation.downstream",
+    "evaluation.reliability"
+   ]
+  },
+  {
+   "id": "mi2026procmem",
+   "name": "Skill-Pro",
+   "title": "Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents",
+   "authors": "Mi et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.01869",
+   "code": null,
+   "note": "Non-parametric PPO over reusable skills with activation, execution, and termination conditions.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "plugmem2025",
+   "name": "PlugMem",
+   "title": "PlugMem: A Task-Agnostic Plugin Memory Module for LLM Agents",
+   "authors": "Yang et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2603.03296",
+   "code": null,
+   "note": "Task-agnostic plugin memory linking intents, prescriptions, and source trajectories.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "memskill",
+   "name": "MemSkill",
+   "title": "MemSkill: Learning and Evolving Memory Skills for Self-Evolving Agents",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.02474",
+   "code": "https://github.com/ViktorAxelsen/MemSkill",
+   "note": "Learns and evolves a shared bank of memory-processing skills via a controller and a designer.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "memoryarena",
+   "name": "MemoryArena",
+   "title": "Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks",
+   "authors": "He et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.16313",
+   "code": null,
+   "note": "Agent memory in interdependent multi-session tasks.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "liveevo2025",
+   "name": "Live-Evo",
+   "title": "Live-Evo: Online Evolution of Agentic Memory from Continuous Feedback",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.02369",
+   "code": null,
+   "note": "Online evolution of agentic memory from continuous feedback, reweighting experience by memory-on vs. memory-off gaps.",
+   "categories": [
+    "maintenance.retirement",
+    "app.finance",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "exploratorymemory2026",
+   "name": "EMPO²",
+   "title": "Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization",
+   "authors": "Liu et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2026-02",
+   "paper": "https://arxiv.org/abs/2602.23008",
+   "code": null,
+   "note": "Hybrid on/off-policy optimization that trains on tip-guided trajectories with the tips removed.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "li2026seam",
+   "name": "SEAM",
+   "title": "Beyond Experience Retrieval: Learning to Generate Utility-Optimized Structured Experience for Frozen LLMs",
+   "authors": "Li et al.",
+   "venue": "ACL 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2602.02556",
+   "code": null,
+   "note": "Trains a small generator to produce utility-optimized structured experience for a frozen LLM.",
+   "categories": [
+    "utilization.internalization"
+   ]
+  },
+  {
+   "id": "memrl2026",
+   "name": "MemRL",
+   "title": "MemRL: Self-Evolving Agents via Runtime Reinforcement Learning on Episodic Memory",
+   "authors": "Zhang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.03192",
+   "code": null,
+   "note": "Runtime RL on episodic memory that learns utility values for retrieval candidates.",
+   "categories": [
+    "utilization.selection",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "memgovern2025",
+   "name": "MemGovern",
+   "title": "MemGovern: Enhancing Code Agents through Learning from Governed Human Experiences",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.06789",
+   "code": "https://github.com/QuantaAlpha/MemGovern",
+   "note": "Learns from governed human experience: converts GitHub records into searchable experience cards.",
+   "categories": [
+    "app.swe",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "mem2actbench",
+   "name": "Mem2ActBench",
+   "title": "Mem2ActBench: A Benchmark for Evaluating Long-Term Memory Utilization in Task-Oriented Autonomous Agents",
+   "authors": "Shen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.19935",
+   "code": null,
+   "note": "Evaluates long-term memory utilization through memory-based tool arguments.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "yue2026memt",
+   "name": "Mem-T",
+   "title": "Mem-T: Densifying Rewards for Long-Horizon Memory Agents",
+   "authors": "Yue et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.23014",
+   "code": null,
+   "note": "Densifies rewards for long-horizon memory agents using memories cited in reasoning traces.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "mcma2025",
+   "name": "MCMA",
+   "title": "Learning How to Remember: A Meta-Cognitive Management Method for Structured and Transferable Agent Memory",
+   "authors": "Liang et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.07470",
+   "code": null,
+   "note": "Trains a memory copilot on downstream-ranked preferences to structure and abstract trajectories for a frozen task model.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "sun2026_magnet",
+   "name": "MAGNET",
+   "title": "MAGNET: Towards Adaptive GUI Agents with Memory-Driven Knowledge Evolution",
+   "authors": "Sun et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.19199",
+   "code": null,
+   "note": "Memory-driven knowledge evolution linking visual examples to functional descriptions for adaptive GUI agents.",
+   "categories": [
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "finemem2025",
+   "name": "Fine-Mem",
+   "title": "Fine-Mem: Fine-Grained Feedback Alignment for Long-Horizon Memory Management",
+   "authors": "Ma et al.",
+   "venue": "ACL 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.08435",
+   "code": null,
+   "note": "Fine-grained feedback alignment for long-horizon memory management using cited memories for credit.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "zhao2026faithfulselfevolvers",
+   "name": "Faithful Self-Evolvers",
+   "title": "Large Language Model Agents Are Not Always Faithful Self-Evolvers",
+   "authors": "Zhao et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.22436",
+   "code": null,
+   "note": "Perturbs raw and condensed experience to test whether agents actually depend on it.",
+   "categories": [
+    "evaluation.process"
+   ]
+  },
+  {
+   "id": "zhang2026_expseek",
+   "name": "ExpSeek",
+   "title": "ExpSeek: Self-Triggered Experience Seeking for Web Agents",
+   "authors": "Zhang et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.08605",
+   "code": null,
+   "note": "Self-triggered experience seeking for web agents using step-wise entropy thresholds.",
+   "categories": [
+    "utilization.triggering",
+    "app.qa"
+   ]
+  },
+  {
+   "id": "sun2026dsmcm",
+   "name": "DS-MCM",
+   "title": "Deep Search with Hierarchical Meta-Cognitive Monitoring Inspired by Cognitive Neuroscience",
+   "authors": "Sun et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.23188",
+   "code": null,
+   "note": "Meta-cognitive monitoring for deep search that triggers retrieval of past successes and failures on detected deviation.",
+   "categories": [
+    "utilization.triggering"
+   ]
+  },
+  {
+   "id": "chen2026_cua_skill",
+   "name": "CUA-Skill",
+   "title": "CUA-Skill: Develop Skills for Computer Using Agent",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.21123",
+   "code": "https://github.com/microsoft/cua_skill",
+   "note": "Human-authored parameterized skills with execution graphs for Windows computer-use agents.",
+   "categories": [
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "controlledselfevo2026",
+   "name": "Controlled Self-Evolution",
+   "title": "Controlled Self-Evolution for Algorithmic Code Optimization",
+   "authors": "Hu et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.07348",
+   "code": "https://github.com/QuantaAlpha/EvoControl",
+   "note": "Controlled self-evolution for algorithmic code optimization with global experience extraction.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "agenticmemory2026",
+   "name": "AgeMem",
+   "title": "Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents",
+   "authors": "Yu et al.",
+   "venue": "ACL 2026",
+   "year": 2026,
+   "date": "2026-01",
+   "paper": "https://arxiv.org/abs/2601.01885",
+   "code": null,
+   "note": "Learns unified long- and short-term memory management, crediting final outcomes to memory actions.",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "jiang2026selfimprovingagents",
+   "name": "Self-Improving Agents in the Era of Experience",
+   "title": "Self-Improving Agents in the Era of Experience: A Survey of Self- to Meta-Evolution",
+   "authors": "Jiang et al.",
+   "venue": "OpenReview 2026",
+   "year": 2026,
+   "date": null,
+   "paper": "https://openreview.net/pdf?id=IUltZSgLMm",
+   "code": null,
+   "note": "Surveys post-deployment improvement via an external path (skills, memory, context, tools), a parameter path, and meta-evolution.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "liu2026pathrsi",
+   "name": "Path to Recursive Self-Improving Agents",
+   "title": "The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions",
+   "authors": "Liu et al.",
+   "venue": "Preprints.org 2026",
+   "year": 2026,
+   "date": null,
+   "paper": "https://www.preprints.org/manuscript/202608.0051",
+   "code": null,
+   "note": "Foundations, framework, and future directions for recursively self-improving agents.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "zhao2026demystifymemory",
+   "name": "Memory in MLE Agents",
+   "title": "Demystify the Role of Memory in Machine Learning Engineering Agents",
+   "authors": "Zhao et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": null,
+   "paper": "https://aclanthology.org/2026.findings-acl.525/",
+   "code": null,
+   "note": "Demystifies memory in machine-learning-engineering agents: stability vs. diversity of solutions.",
+   "categories": [
+    "app.science",
+    "evaluation.downstream"
+   ]
+  },
+  {
+   "id": "nousresearch2026hermescurator",
+   "name": "Hermes Curator",
+   "title": "Hermes Agent: Curator",
+   "authors": "Research",
+   "venue": "Docs 2026",
+   "year": 2026,
+   "date": null,
+   "paper": "https://hermes-agent.nousresearch.com/docs/user-guide/features/curator",
+   "code": null,
+   "note": "Archives inactive agent-created skills with restore support (engineering documentation).",
+   "categories": [
+    "maintenance.retirement"
+   ]
+  },
+  {
+   "id": "wu2026agentskillsprocedural",
+   "name": "Agent Skills as Procedural Memory",
+   "title": "Agent Skills from the Perspective of Procedural Memory: A Survey",
+   "authors": "Wu et al.",
+   "venue": "TechRxiv 2026",
+   "year": 2026,
+   "date": null,
+   "paper": "https://yashonwu.github.io/agent-skills-survey/",
+   "code": null,
+   "note": "Surveys agent skills as procedural memory across acquisition, representation, invocation, and refinement.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "cao2025remember",
+   "name": "ReMe",
+   "title": "Remember Me, Refine Me: A Dynamic Procedural Memory Framework for Experience-Driven Agent Evolution",
+   "authors": "Cao et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.10696",
+   "code": "https://github.com/agentscope-ai/ReMe",
+   "note": "Dynamic procedural memory separating success patterns, failure analysis, and comparative insights, with utility-based pruning.",
+   "categories": [
+    "formation.semantic",
+    "maintenance.retirement",
+    "utilization.adaptation",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "memorygraft2025",
+   "name": "MemoryGraft",
+   "title": "MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval",
+   "authors": "Srivastava et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.16962",
+   "code": null,
+   "note": "Persistent compromise via poisoned experience retrieval.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "hu2025memory",
+   "name": "Memory in the Age of AI Agents",
+   "title": "Memory in the Age of AI Agents",
+   "authors": "Hu et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.13564",
+   "code": "https://github.com/Shichun-Liu/Agent-Memory-Paper-List",
+   "note": "Agent-memory survey by forms, functions, and dynamics; its factual / working / experiential roles frame where an experience repository sits.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "memevolve2025",
+   "name": "MemEvolve",
+   "title": "MemEvolve: Meta-Evolution of Agent Memory Systems",
+   "authors": "Zhang et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.18746",
+   "code": "https://github.com/bingreeky/MemEvolve",
+   "note": "Meta-evolution of agent memory architectures, each starting from empty memory.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "macla2025",
+   "name": "MACLA",
+   "title": "Learning Hierarchical Procedural Memory for LLM Agents through Bayesian Selection and Contrastive Refinement",
+   "authors": "Forouzandeh et al.",
+   "venue": "AAMAS 2026",
+   "year": 2026,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.18950",
+   "code": null,
+   "note": "Hierarchical procedural memory with Bayesian selection, meta-procedures, and contrastive refinement.",
+   "categories": [
+    "organization.tree",
+    "maintenance.refinement"
+   ]
+  },
+  {
+   "id": "sitgraph2025",
+   "name": "H-EPM",
+   "title": "Experience-Evolving Multi-Turn Tool-Use Agent with Hybrid Episodic-Procedural Memory",
+   "authors": "Li et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2025-12",
+   "paper": "https://arxiv.org/abs/2512.07287",
+   "code": null,
+   "note": "Hybrid episodic-procedural memory: weighted tool-transition graph from successful multi-turn tool use.",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "webcoach2025",
+   "name": "WebCoach",
+   "title": "WebCoach: Self-Evolving Web Agents with Cross-Session Memory Guidance",
+   "authors": "Liu et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.12997",
+   "code": "https://github.com/genglinliu/WebCoach",
+   "note": "Cross-session memory coach that intervenes only when it detects likely failure or a better stored workflow.",
+   "categories": [
+    "utilization.triggering"
+   ]
+  },
+  {
+   "id": "experiencetostrategy2025",
+   "name": "Trainable Graph Memory",
+   "title": "From Experience to Strategy: Empowering LLM Agents with Trainable Graph Memory",
+   "authors": "Xia et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.07800",
+   "code": null,
+   "note": "Routes task queries through decision patterns to high-level strategies via a trainable graph memory.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "chen2025halumem",
+   "name": "HaluMem",
+   "title": "HaluMem: Evaluating Hallucinations in Memory Systems of Agents",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.03506",
+   "code": "https://github.com/MemTensor/HaluMem",
+   "note": "Evaluates hallucinations in agent memory systems claim by claim (adjacent: conversational memory).",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "evomemory",
+   "name": "Evo-Memory",
+   "title": "Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory",
+   "authors": "Wei et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.20857",
+   "code": null,
+   "note": "Benchmarks test-time learning with self-evolving memory under varied task orders.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "experienceguided2025",
+   "name": "EGuR",
+   "title": "Experience-Guided Adaptation of Inference-Time Reasoning Strategies",
+   "authors": "Stein et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.11519",
+   "code": null,
+   "note": "Experience-guided generation of complete inference-time reasoning strategies as code.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "he2026coninstruct",
+   "name": "ConInstruct",
+   "title": "ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions",
+   "authors": "He et al.",
+   "venue": "AAAI 2026",
+   "year": 2026,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.14342",
+   "code": null,
+   "note": "Evaluates conflict detection and resolution in instructions on seeded, human-verified conflicts.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "kirtania2025brew",
+   "name": "BREW",
+   "title": "Improving Language Agents through BREW: Bootstrapping expeRientially-learned Environmental knoWledge",
+   "authors": "Kirtania et al.",
+   "venue": "COLM 2026",
+   "year": 2026,
+   "date": "2025-11",
+   "paper": "https://arxiv.org/abs/2511.20297",
+   "code": null,
+   "note": "Relabels failed attempts as alternative tasks, reruns them, and distills graded trajectories into natural-language recipes.",
+   "categories": [
+    "formation.procedural",
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "cai2025trainingfreegrpo",
+   "name": "Training-Free GRPO",
+   "title": "Training-Free Group Relative Policy Optimization",
+   "authors": "Cai et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.08191",
+   "code": null,
+   "note": "Contrasts groups of attempts with reference answers to edit a natural-language experience library, held fixed at test time.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "harada2026reflectrevise",
+   "name": "Reflect-and-Revise",
+   "title": "Automated Refinement of Essay Scoring Rubrics for Language Models via Reflect-and-Revise",
+   "authors": "Harada et al.",
+   "venue": "CoNLL 2026",
+   "year": 2026,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.09030",
+   "code": null,
+   "note": "Refines essay-scoring rubrics from earlier evaluation errors.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "yu2026polyskill",
+   "name": "PolySkill",
+   "title": "PolySkill: Learning Generalizable Skills Through Polymorphic Abstraction For Continual Learning",
+   "authors": "Yu et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.15863",
+   "code": null,
+   "note": "Polymorphic abstraction: one skill interface realized by site-specific implementations for continual learning.",
+   "categories": [
+    "utilization.adaptation"
+   ]
+  },
+  {
+   "id": "yang2025learning",
+   "name": "MUSE",
+   "title": "Learning on the Job: An Experience-Driven Self-Evolving Agent for Long-Horizon Tasks",
+   "authors": "Yang et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.08002",
+   "code": "https://github.com/KnowledgeXLab/MUSE",
+   "note": "Learning on the job: admits SOPs after verified subtask success, then deduplicates and generalizes them.",
+   "categories": [
+    "maintenance.consolidation",
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "legomem2025",
+   "name": "LEGOMem",
+   "title": "LEGOMem: Modular Procedural Memory for Multi-agent LLM Systems for Workflow Automation",
+   "authors": "Han et al.",
+   "venue": "AAMAS 2026",
+   "year": 2026,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.04851",
+   "code": null,
+   "note": "Modular procedural memory allocating full-task memory to orchestrators and subtask memory to task agents.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "wu2025evolver",
+   "name": "EvolveR",
+   "title": "From Interactions to Principles: Experience-Driven Self-Distillation for Evolving LLM Agents",
+   "authors": "Wu et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.16079",
+   "code": null,
+   "note": "Experience-driven self-distillation into principles; merges semantically equivalent principles by attaching sources.",
+   "categories": [
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "echo2025",
+   "name": "ECHO",
+   "title": "Sample-Efficient Online Learning in LM Agents via Hindsight Trajectory Rewriting",
+   "authors": "Hu et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.10304",
+   "code": null,
+   "note": "Hindsight rewriting of failed trajectories into synthetic successes or workflows for alternative goals.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "zhang2026ace",
+   "name": "ACE",
+   "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+   "authors": "Zhang et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2025-10",
+   "paper": "https://arxiv.org/abs/2510.04618",
+   "code": "https://github.com/ace-agent/ace",
+   "note": "Agentic context engineering: a reflector derives lessons and a curator updates an evolving playbook.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "kagaya2025vireskill",
+   "name": "ViReSkill",
+   "title": "ViReSkill: Vision-Grounded Replanning with Skill Memory for LLM-Based Planning in Lifelong Robot Learning",
+   "authors": "Kagaya et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2509.24219",
+   "code": null,
+   "note": "Vision-grounded replanning with a skill memory of successful plans and control code for robots.",
+   "categories": [
+    "app.embodied"
+   ]
+  },
+  {
+   "id": "xu2025sedm",
+   "name": "SEDM",
+   "title": "SEDM: Scalable Self-Evolving Distributed Memory for Agents",
+   "authors": "Xu et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2509.09498",
+   "code": null,
+   "note": "Self-evolving distributed memory with paired replay admission scored after latency and token costs.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "reasoningbank2025",
+   "name": "ReasoningBank",
+   "title": "ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory",
+   "authors": "Ouyang et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2509.25140",
+   "code": null,
+   "note": "Distills successful strategies and failure lessons from self-judged trajectories; memory-aware test-time scaling.",
+   "categories": [
+    "formation.semantic",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "memgen2025",
+   "name": "MemGen",
+   "title": "MemGen: Weaving Generative Latent Memory for Self-Evolving Agents",
+   "authors": "Zhang et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2509.24704",
+   "code": null,
+   "note": "Generative latent memory woven into a frozen reasoner; adjacent because its latent tokens are not inspectable experience.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "ye2025h2r",
+   "name": "H²R",
+   "title": "H²R: Hierarchical Hindsight Reflection for Multi-Task LLM Agents",
+   "authors": "Ye et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2509.12810",
+   "code": null,
+   "note": "Hierarchical hindsight reflection with separate planning and execution lessons for planner and executor.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "amemguard2026",
+   "name": "A-MemGuard",
+   "title": "A-MemGuard: A Proactive Defense Framework for LLM-Based Agent Memory",
+   "authors": "Wei et al.",
+   "venue": "ICML 2026",
+   "year": 2026,
+   "date": "2025-09",
+   "paper": "https://arxiv.org/abs/2510.02373",
+   "code": null,
+   "note": "Proactive defense validating memories across reasoning paths with a separate store of failure lessons.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "tradinggroup2025",
+   "name": "TradingGroup",
+   "title": "TradingGroup: A Multi-Agent Trading System with Self-Reflection and Data-Synthesis",
+   "authors": "Tian et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.17565",
+   "code": null,
+   "note": "Multi-agent trading with self-reflection over recent successful and failed decisions.",
+   "categories": [
+    "app.finance"
+   ]
+  },
+  {
+   "id": "fang2025selfevolvingcomprehensive",
+   "name": "Self-Evolving AI Agents Survey",
+   "title": "A Comprehensive Survey of Self-Evolving AI Agents: A New Paradigm Bridging Foundation Models and Lifelong Agentic Systems",
+   "authors": "Fang et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.07407",
+   "code": "https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents",
+   "note": "Frames self-evolving agentic systems as a loop of inputs, agent system, environment, and optimizers; centers on the optimizer rather than the retained guidance.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "cui2025seer",
+   "name": "SEER",
+   "title": "Self-Guided Function Calling in Large Language Models via Stepwise Experience Recall",
+   "authors": "Cui et al.",
+   "venue": "EMNLP Findings 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.15214",
+   "code": null,
+   "note": "Tags successful tool-use trajectories with user intent and toolchain, then recalls them step by step as precedents.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "memp2025",
+   "name": "Memp",
+   "title": "Memp: Exploring Agent Procedural Memory",
+   "authors": "Fang et al.",
+   "venue": "ACL Findings 2026",
+   "year": 2026,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.06433",
+   "code": null,
+   "note": "Explores procedural memory: abstract scripts plus source trajectories outperform either alone on ALFWorld.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "memoryr1_2025",
+   "name": "Memory-R1",
+   "title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning",
+   "authors": "Yan et al.",
+   "venue": "ACL 2026",
+   "year": 2026,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.19828",
+   "code": null,
+   "note": "RL-trained ADD / UPDATE / DELETE / NOOP memory operations (adjacent: conversational memory).",
+   "categories": [
+    "maintenance.coordination"
+   ]
+  },
+  {
+   "id": "memento2025",
+   "name": "Memento",
+   "title": "Memento: Fine-tuning LLM Agents without Fine-tuning LLMs",
+   "authors": "Zhou et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.16153",
+   "code": "https://github.com/Agent-on-the-Fly/AgentFly",
+   "note": "Case-based memory with a learned retrieval policy: 'fine-tuning' agents without fine-tuning the LLM.",
+   "categories": [
+    "utilization.selection",
+    "app.qa"
+   ]
+  },
+  {
+   "id": "yang2025cfgm",
+   "name": "CFGM",
+   "title": "Coarse-to-Fine Grounded Memory for LLM Agent Planning",
+   "authors": "Yang et al.",
+   "venue": "EMNLP 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.15305",
+   "code": null,
+   "note": "Coarse-to-fine grounded memory writing tips from each collected experience for agent planning.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "luo2025agentlightning",
+   "name": "Agent Lightning",
+   "title": "Agent Lightning: Train ANY AI Agents with Reinforcement Learning",
+   "authors": "Luo et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-08",
+   "paper": "https://arxiv.org/abs/2508.03680",
+   "code": "https://github.com/microsoft/agent-lightning",
+   "note": "Framework for training arbitrary AI agents with reinforcement learning from their execution traces.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "chen2025_swe_exp",
+   "name": "SWE-Exp",
+   "title": "SWE-Exp: Experience-Driven Software Issue Resolution",
+   "authors": "Chen et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-07",
+   "paper": "https://arxiv.org/abs/2507.23361",
+   "code": "https://github.com/YerbaPage/SWE-Exp",
+   "note": "Extracts comprehension and modification experience from trajectories for issue resolution.",
+   "categories": [
+    "app.swe"
+   ]
+  },
+  {
+   "id": "gao2025selfevolving",
+   "name": "Survey of Self-Evolving Agents",
+   "title": "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve on the Path to Artificial Super Intelligence",
+   "authors": "Gao et al.",
+   "venue": "TMLR 2026",
+   "year": 2026,
+   "date": "2025-07",
+   "paper": "https://arxiv.org/abs/2507.21046",
+   "code": "https://github.com/CharlesQ9/Self-Evolving-Agents",
+   "note": "Organizes self-evolving agents by what, when, how, and where to evolve; memory is one of several evolving components.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "qu2026pragmatist",
+   "name": "Pragmatist Robot",
+   "title": "A Pragmatist Robot: Learning to Plan Tasks by Experiencing the Real World",
+   "authors": "Qu et al.",
+   "venue": "ICRA 2026",
+   "year": 2026,
+   "date": "2025-07",
+   "paper": "https://arxiv.org/abs/2507.16713",
+   "code": null,
+   "note": "Legged manipulator that learns to plan from lessons summarized from its own real-world attempts.",
+   "categories": [
+    "app.embodied"
+   ]
+  },
+  {
+   "id": "hmem2025",
+   "name": "H-MEM",
+   "title": "H-MEM: Hierarchical Memory for High-Efficiency Long-Term Reasoning in LLM Agents",
+   "authors": "Sun et al.",
+   "venue": "EACL 2026",
+   "year": 2026,
+   "date": "2025-07",
+   "paper": "https://arxiv.org/abs/2507.22925",
+   "code": null,
+   "note": "Hierarchical domain–category–record–episode memory (adjacent: dialogue memory).",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "tang2025agentkb",
+   "name": "Agent KB",
+   "title": "Agent KB: Leveraging Cross-Domain Experience for Agentic Problem Solving",
+   "authors": "Tang et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-07",
+   "paper": "https://arxiv.org/abs/2507.06229",
+   "code": "https://github.com/OPPO-PersonalAI/Agent-KB",
+   "note": "Cross-domain experience knowledge base exposing workflows with constraints and mapping them to new domains.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "bouzenia2025understanding",
+   "name": "SWE Agent Trajectories",
+   "title": "Understanding Software Engineering Agents: A Study of Thought-Action-Result Trajectories",
+   "authors": "Bouzenia et al.",
+   "venue": "ASE 2025",
+   "year": 2025,
+   "date": "2025-06",
+   "paper": "https://arxiv.org/abs/2506.18824",
+   "code": null,
+   "note": "Empirical study of thought-action-result trajectories of software-engineering agents.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "gmemory2025",
+   "name": "G-Memory",
+   "title": "G-Memory: Tracing Hierarchical Memory for Multi-Agent Systems",
+   "authors": "Zhang et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": "2025-06",
+   "paper": "https://arxiv.org/abs/2506.07398",
+   "code": "https://github.com/bingreeky/GMemory",
+   "note": "Three-tier graph memory (insights, queries, interactions) for multi-agent systems.",
+   "categories": [
+    "organization.hierarchical"
+   ]
+  },
+  {
+   "id": "selfgeneratedice",
+   "name": "Self-Generated ICE",
+   "title": "Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks",
+   "authors": "Sarukkai et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": "2025-05",
+   "paper": "https://arxiv.org/abs/2505.00234",
+   "code": null,
+   "note": "Bootstraps a database of successful self-generated trajectories as in-context examples for sequential decision making.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "xiong2026memorymanagement",
+   "name": "Experience-Following",
+   "title": "How Memory Management Impacts LLM Agents: An Empirical Study of Experience-Following Behavior",
+   "authors": "Xiong et al.",
+   "venue": "ACL 2026",
+   "year": 2026,
+   "date": "2025-05",
+   "paper": "https://arxiv.org/abs/2505.16067",
+   "code": null,
+   "note": "Empirical study of how memory management drives experience-following behavior, errors included.",
+   "categories": [
+    "evaluation.downstream",
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "zhang2025darwingodel",
+   "name": "Darwin Gödel Machine",
+   "title": "Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents",
+   "authors": "Zhang et al.",
+   "venue": "ICLR 2026",
+   "year": 2026,
+   "date": "2025-05",
+   "paper": "https://arxiv.org/abs/2505.22954",
+   "code": "https://github.com/jennyzzt/dgm",
+   "note": "Open-ended evolution of self-improving coding agents that rewrite their own code.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "skillweaver2025",
+   "name": "SkillWeaver",
+   "title": "SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills",
+   "authors": "Zheng et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-04",
+   "paper": "https://arxiv.org/abs/2504.07079",
+   "code": "https://github.com/OSU-NLP-Group/SkillWeaver",
+   "note": "Web agents propose, practice, and distill skills into callable website APIs, then test and debug them.",
+   "categories": [
+    "formation.procedural",
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "mem0_2025",
+   "name": "Mem0",
+   "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+   "authors": "Chhikara et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-04",
+   "paper": "https://arxiv.org/abs/2504.19413",
+   "code": "https://github.com/mem0ai/mem0",
+   "note": "Production-ready scalable long-term memory extracted at each interaction (adjacent: conversational facts).",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "dynamiccheatsheet2025",
+   "name": "Dynamic Cheatsheet",
+   "title": "Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory",
+   "authors": "Suzgun et al.",
+   "venue": "EACL 2026",
+   "year": 2026,
+   "date": "2025-04",
+   "paper": "https://arxiv.org/abs/2504.07952",
+   "code": "https://github.com/suzgunmirac/dynamic-cheatsheet",
+   "note": "Test-time learning that accumulates strategies and code while answering, without reference answers.",
+   "categories": [
+    "app.qa",
+    "maintenance.consolidation"
+   ]
+  },
+  {
+   "id": "cbr2025llmagents",
+   "name": "CBR for LLM Agents",
+   "title": "Review of Case-Based Reasoning for LLM Agents: Theoretical Foundations, Architectural Components, and Cognitive Integration",
+   "authors": "Hatalis et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-04",
+   "paper": "https://arxiv.org/abs/2504.06943",
+   "code": null,
+   "note": "Review of case-based reasoning for LLM agents: theoretical foundations, architectural components, and cognitive integration.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "wang2025inducing",
+   "name": "ASI",
+   "title": "Inducing Programmatic Skills for Agentic Tasks",
+   "authors": "Wang et al.",
+   "venue": "COLM 2025",
+   "year": 2025,
+   "date": "2025-04",
+   "paper": "https://arxiv.org/abs/2504.06821",
+   "code": "https://github.com/zorazrw/agent-skill-induction",
+   "note": "Agent skill induction: induces programmatic skills and verifies them by replaying rewritten source trajectories.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "dong2025minja",
+   "name": "MINJA",
+   "title": "Memory Injection Attacks on LLM Agents via Query-Only Interaction",
+   "authors": "Dong et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": "2025-03",
+   "paper": "https://arxiv.org/abs/2503.03704",
+   "code": null,
+   "note": "Memory injection attacks through ordinary query-only interaction.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "amem2025",
+   "name": "A-MEM",
+   "title": "A-MEM: Agentic Memory for LLM Agents",
+   "authors": "Xu et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": "2025-02",
+   "paper": "https://arxiv.org/abs/2502.12110",
+   "code": "https://github.com/wujiangxu/agenticmemory",
+   "note": "Agentic memory with associative links among notes (adjacent: general memory).",
+   "categories": [
+    "organization.graph"
+   ]
+  },
+  {
+   "id": "huang2025r2d2",
+   "name": "R2D2",
+   "title": "R2D2: Remembering, Replaying and Dynamic Decision Making with a Reflective Agentic Memory",
+   "authors": "Huang et al.",
+   "venue": "ACL 2025",
+   "year": 2025,
+   "date": "2025-01",
+   "paper": "https://arxiv.org/abs/2501.12485",
+   "code": null,
+   "note": "Reflective agentic memory with a replay graph of observations and actions for web navigation.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "wang2025mobileagente",
+   "name": "Mobile-Agent-E",
+   "title": "Mobile-Agent-E: Self-Evolving Mobile Assistant for Complex Tasks",
+   "authors": "Wang et al.",
+   "venue": "arXiv 2025",
+   "year": 2025,
+   "date": "2025-01",
+   "paper": "https://arxiv.org/abs/2501.11733",
+   "code": null,
+   "note": "Self-evolving mobile assistant maintaining Tips (lessons) and Shortcuts (verified operation sequences).",
+   "categories": [
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "su2025learnbyinteract",
+   "name": "Learn-by-Interact",
+   "title": "Learn-by-interact: A Data-Centric Framework for Self-Adaptive Agents in Realistic Environments",
+   "authors": "Su et al.",
+   "venue": "ICLR 2025",
+   "year": 2025,
+   "date": "2025-01",
+   "paper": "https://arxiv.org/abs/2501.10893",
+   "code": null,
+   "note": "Synthesizes tasks from environment documentation and backward-constructs instruction–trajectory pairs as precedents.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "metaflowllm2025",
+   "name": "MetaFlowLLM",
+   "title": "Generalizing Experience for Language Agents with Hierarchical MetaFlows",
+   "authors": "Fan et al.",
+   "venue": "NeurIPS 2025",
+   "year": 2025,
+   "date": null,
+   "paper": null,
+   "code": null,
+   "note": "Hierarchical MetaFlows return a workflow skeleton whose open subtasks the agent completes.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "silver2025experience",
+   "name": "Era of Experience",
+   "title": "Welcome to the Era of Experience",
+   "authors": "Silver et al.",
+   "venue": "Google DeepMind 2025",
+   "year": 2025,
+   "date": null,
+   "paper": "https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf",
+   "code": null,
+   "note": "Argues that agents will increasingly learn from their own streams of interaction experience.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "zhu2025collaborativeexperience",
+   "name": "CRAVE",
+   "title": "LLM-based Conversational Recommendation Agents with Collaborative Verbalized Experience",
+   "authors": "Zhu et al.",
+   "venue": "EMNLP Findings 2025",
+   "year": 2025,
+   "date": null,
+   "paper": "https://aclanthology.org/2025.findings-emnlp.119/",
+   "code": null,
+   "note": "Collaborative verbalized experience banks for conversational recommendation agents.",
+   "categories": [
+    "app.recsys"
+   ]
+  },
+  {
+   "id": "nguyen2025dynasaur",
+   "name": "DynaSaur",
+   "title": "DynaSaur: Large Language Agents Beyond Predefined Actions",
+   "authors": "Nguyen et al.",
+   "venue": "COLM 2025",
+   "year": 2025,
+   "date": "2024-11",
+   "paper": "https://arxiv.org/abs/2411.01747",
+   "code": "https://github.com/adobe-research/dynasaur",
+   "note": "Agents that write and accumulate their own Python actions beyond a predefined action set.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "reflectool2025",
+   "name": "ReflecTool",
+   "title": "ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents",
+   "authors": "Liao et al.",
+   "venue": "ACL 2025",
+   "year": 2025,
+   "date": "2024-10",
+   "paper": "https://arxiv.org/abs/2410.17657",
+   "code": null,
+   "note": "Reflection-aware clinical agents retaining tool-use trajectories and tool-specific experience.",
+   "categories": [
+    "app.qa"
+   ]
+  },
+  {
+   "id": "rezazadeh2024memtree",
+   "name": "MemTree",
+   "title": "From Isolated Conversations to Hierarchical Schemas: Dynamic Tree Memory Representation for LLMs",
+   "authors": "Rezazadeh et al.",
+   "venue": "ICLR 2025",
+   "year": 2025,
+   "date": "2024-10",
+   "paper": "https://arxiv.org/abs/2410.14052",
+   "code": null,
+   "note": "Dynamic tree memory for conversations and documents (adjacent); matches across all levels.",
+   "categories": [
+    "organization.tree"
+   ]
+  },
+  {
+   "id": "agashe2024agents",
+   "name": "Agent S",
+   "title": "Agent S: An Open Agentic Framework that Uses Computers Like a Human",
+   "authors": "Agashe et al.",
+   "venue": "ICLR 2025",
+   "year": 2025,
+   "date": "2024-10",
+   "paper": "https://arxiv.org/abs/2410.08164",
+   "code": null,
+   "note": "Computer-use agent with experience-augmented hierarchical planning; builds separate task- and subtask-level queries into narrative and episodic memory.",
+   "categories": [
+    "utilization.application",
+    "formation.trajectory",
+    "app.computer-use"
+   ]
+  },
+  {
+   "id": "wang2025agentworkflowmemory",
+   "name": "AWM",
+   "title": "Agent Workflow Memory",
+   "authors": "Wang et al.",
+   "venue": "ICML 2025",
+   "year": 2025,
+   "date": "2024-09",
+   "paper": "https://arxiv.org/abs/2409.07429",
+   "code": "https://github.com/zorazrw/agent-workflow-memory",
+   "note": "Agent Workflow Memory: induces reusable, variable-parameterized workflows from demonstrations or successful runs.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "xi2024memocrs",
+   "name": "MemoCRS",
+   "title": "MemoCRS: Memory-enhanced Sequential Conversational Recommender Systems with Large Language Models",
+   "authors": "Xi et al.",
+   "venue": "CIKM 2024",
+   "year": 2024,
+   "date": "2024-07",
+   "paper": "https://arxiv.org/abs/2407.04960",
+   "code": null,
+   "note": "Memory-enhanced conversational recommendation with shared, feedback-revised guidelines.",
+   "categories": [
+    "app.recsys"
+   ]
+  },
+  {
+   "id": "yu2024fincon",
+   "name": "FinCon",
+   "title": "FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making",
+   "authors": "Yu et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-07",
+   "paper": "https://arxiv.org/abs/2407.06567",
+   "code": null,
+   "note": "Conceptual verbal reinforcement that revises investment beliefs for financial decisions.",
+   "categories": [
+    "app.finance"
+   ]
+  },
+  {
+   "id": "chen2024agentpoison",
+   "name": "AgentPoison",
+   "title": "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases",
+   "authors": "Chen et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-07",
+   "paper": "https://arxiv.org/abs/2407.12784",
+   "code": "https://github.com/BillChan226/AgentPoison",
+   "note": "Red-teams agents with optimized triggers that retrieve poisoned memory or knowledge-base demonstrations.",
+   "categories": [
+    "maintenance.safety"
+   ]
+  },
+  {
+   "id": "streambench",
+   "name": "StreamBench",
+   "title": "StreamBench: Towards Benchmarking Continuous Improvement of Language Agents",
+   "authors": "Wu et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-06",
+   "paper": "https://arxiv.org/abs/2406.08747",
+   "code": "https://github.com/stream-bench/stream-bench",
+   "note": "Benchmarks continuous improvement of language agents over input streams.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
+   "id": "sarch2024vlm",
+   "name": "ICAL",
+   "title": "VLM Agents Generate Their Own Memories: Distilling Experience into Embodied Programs of Thought",
+   "authors": "Sarch et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-06",
+   "paper": "https://arxiv.org/abs/2406.14596",
+   "code": null,
+   "note": "VLM agents turn noisy, human-corrected demonstrations into programs of thought with abstractions used as exemplars.",
+   "categories": [
+    "formation.trajectory",
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "yang2024bot",
+   "name": "Buffer of Thoughts",
+   "title": "Buffer of Thoughts: Thought-Augmented Reasoning with Large Language Models",
+   "authors": "Yang et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-06",
+   "paper": "https://arxiv.org/abs/2406.04271",
+   "code": "https://github.com/yangling0818/buffer-of-thought-llm",
+   "note": "Distills thought templates from earlier problems and adapts a retrieved template to new questions.",
+   "categories": [
+    "app.qa",
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "gupta2024metareflection",
+   "name": "MetaReflection",
+   "title": "MetaReflection: Learning Instructions for Language Agents using Past Reflections",
+   "authors": "Gupta et al.",
+   "venue": "EMNLP 2024",
+   "year": 2024,
+   "date": "2024-05",
+   "paper": "https://arxiv.org/abs/2405.13009",
+   "code": null,
+   "note": "Learns reusable instructions for language agents from past reflections.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "chen2024automanual",
+   "name": "AutoManual",
+   "title": "AutoManual: Constructing Instruction Manuals by LLM Agents via Interactive Environmental Learning",
+   "authors": "Chen et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-05",
+   "paper": "https://arxiv.org/abs/2405.16247",
+   "code": "https://github.com/minghchen/automanual",
+   "note": "Builds an instruction manual of rules from interaction, generalizing rules while recording their dependencies.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "zhou2024trad",
+   "name": "TRAD",
+   "title": "TRAD: Enhancing LLM Agents with Step-Wise Thought Retrieval and Aligned Decision",
+   "authors": "Zhou et al.",
+   "venue": "SIGIR 2024",
+   "year": 2024,
+   "date": "2024-03",
+   "paper": "https://arxiv.org/abs/2403.06221",
+   "code": "https://github.com/skyriver-2000/trad-official",
+   "note": "Annotates each expert step with an action-consistent thought and retrieves steps by thought similarity.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "wang2025re2llm",
+   "name": "Re2LLM",
+   "title": "Re2LLM: Reflective Reinforcement Large Language Model for Session-based Recommendation",
+   "authors": "Wang et al.",
+   "venue": "AAAI 2025",
+   "year": 2025,
+   "date": "2024-03",
+   "paper": "https://arxiv.org/abs/2403.16427",
+   "code": null,
+   "note": "Reflects on missed sessions and turns inferred causes into hints for session-based recommendation.",
+   "categories": [
+    "app.recsys"
+   ]
+  },
+  {
+   "id": "murty2024bagel",
+   "name": "BAGEL",
+   "title": "BAGEL: Bootstrapping Agents by Guiding Exploration with Language",
+   "authors": "Murty et al.",
+   "venue": "ICML 2024",
+   "year": 2024,
+   "date": "2024-03",
+   "paper": "https://arxiv.org/abs/2403.08140",
+   "code": null,
+   "note": "Relabels exploratory trajectories with synthetic instructions and re-executes them until accepted, yielding in-context demonstrations.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "fu2024autoguide",
+   "name": "AutoGuide",
+   "title": "AutoGuide: Automated Generation and Selection of Context-Aware Guidelines for Large Language Model Agents",
+   "authors": "Fu et al.",
+   "venue": "NeurIPS 2024",
+   "year": 2024,
+   "date": "2024-03",
+   "paper": "https://arxiv.org/abs/2403.08978",
+   "code": null,
+   "note": "Locates where trajectories with different returns diverge and extracts state-aware guidelines with applicable contexts.",
+   "categories": [
+    "formation.semantic",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "nottingham2024sso",
+   "name": "SSO",
+   "title": "Skill Set Optimization: Reinforcing Language Model Behavior via Transferable Skills",
+   "authors": "Nottingham et al.",
+   "venue": "ICML 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.03244",
+   "code": null,
+   "note": "Skill Set Optimization: extracts similar high-reward subtrajectories as subgoal-and-instruction skills.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "kagaya2024rap",
+   "name": "RAP",
+   "title": "RAP: Retrieval-Augmented Planning with Contextual Memory for Multimodal LLM Agents",
+   "authors": "Kagaya et al.",
+   "venue": "arXiv 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.03610",
+   "code": null,
+   "note": "Retrieval-augmented planning that reuses successful trajectories with their task and interaction context.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "wu2024oscopilot",
+   "name": "OS-Copilot",
+   "title": "OS-Copilot: Towards Generalist Computer Agents with Self-Improvement",
+   "authors": "Wu et al.",
+   "venue": "arXiv 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.07456",
+   "code": "https://github.com/OS-Copilot/FRIDAY",
+   "note": "Generalist computer agent that self-improves by admitting critic-verified reusable tools.",
+   "categories": [
+    "maintenance.admission"
+   ]
+  },
+  {
+   "id": "zhao2024learnact",
+   "name": "LearnAct",
+   "title": "Empowering Large Language Model Agents through Action Learning",
+   "authors": "Zhao et al.",
+   "venue": "COLM 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.15809",
+   "code": "https://github.com/zhao-ht/learnact",
+   "note": "Action learning: agents create and refine reusable action functions with loops and conditionals.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "guo2024dsagent",
+   "name": "DS-Agent",
+   "title": "DS-Agent: Automated Data Science by Empowering Large Language Models with Case-Based Reasoning",
+   "authors": "Guo et al.",
+   "venue": "ICML 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.17453",
+   "code": null,
+   "note": "Case-based reasoning for data science: retrieves and adapts successful solution scripts.",
+   "categories": [
+    "app.science"
+   ]
+  },
+  {
+   "id": "agentpro",
+   "name": "Agent-Pro",
+   "title": "Agent-Pro: Learning to Evolve via Policy-Level Reflection and Optimization",
+   "authors": "Zhang et al.",
+   "venue": "ACL 2024",
+   "year": 2024,
+   "date": "2024-02",
+   "paper": "https://arxiv.org/abs/2402.17574",
+   "code": "https://github.com/zwq2018/agent-pro",
+   "note": "Policy-level reflection that retains guidelines and opponent models across games of incomplete information.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "wang2024trove",
+   "name": "TroVE",
+   "title": "TroVE: Inducing Verifiable and Efficient Toolboxes for Solving Programmatic Tasks",
+   "authors": "Wang et al.",
+   "venue": "ICML 2024",
+   "year": 2024,
+   "date": "2024-01",
+   "paper": "https://arxiv.org/abs/2401.12869",
+   "code": "https://github.com/zorazrw/trove",
+   "note": "Induces verifiable, efficient toolboxes of reusable functions for programmatic tasks.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "kim2024rada",
+   "name": "RaDA",
+   "title": "RaDA: Retrieval-augmented Web Agent Planning with LLMs",
+   "authors": "Kim et al.",
+   "venue": "ACL Findings 2024",
+   "year": 2024,
+   "date": null,
+   "paper": "https://aclanthology.org/2024.findings-acl.802/",
+   "code": null,
+   "note": "Retrieval-augmented web-agent planning that composes queries from the plan's remaining subtasks.",
+   "categories": [
+    "utilization.selection"
+   ]
+  },
+  {
+   "id": "lee2024mobilegpt",
+   "name": "MobileGPT",
+   "title": "MobileGPT: Augmenting LLM with Human-like App Memory for Mobile Task Automation",
+   "authors": "Lee et al.",
+   "venue": "MobiCom 2024",
+   "year": 2024,
+   "date": null,
+   "paper": "https://doi.org/10.1145/3636534.3690682",
+   "code": null,
+   "note": "Human-like app memory that decomposes mobile interactions into reusable subtasks with parameterized actions.",
+   "categories": [
+    "formation.procedural"
+   ]
+  },
+  {
+   "id": "zhang2024flash",
+   "name": "FLASH",
+   "title": "FLASH: A Workflow Automation Agent for Diagnosing Recurring Incidents",
+   "authors": "Zhang et al.",
+   "venue": "Microsoft Research 2024",
+   "year": 2024,
+   "date": null,
+   "paper": "https://www.microsoft.com/en-us/research/wp-content/uploads/2024/10/FLASH_Paper.pdf",
+   "code": null,
+   "note": "Workflow-automation agent for recurring incidents using hindsight notes on earlier failed diagnoses.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "wang2025jarvis1",
+   "name": "JARVIS-1",
+   "title": "JARVIS-1: Open-World Multi-Task Agents With Memory-Augmented Multimodal Language Models",
+   "authors": "Wang et al.",
+   "venue": "TPAMI 2025",
+   "year": 2025,
+   "date": "2023-11",
+   "paper": "https://arxiv.org/abs/2311.05997",
+   "code": null,
+   "note": "Open-world Minecraft agent storing successful plans with the task and game state observed when they were made.",
+   "categories": [
+    "formation.trajectory"
+   ]
+  },
+  {
+   "id": "majumder2023clin",
+   "name": "CLIN",
+   "title": "CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization",
+   "authors": "Majumder et al.",
+   "venue": "COLM 2024",
+   "year": 2024,
+   "date": "2023-10",
+   "paper": "https://arxiv.org/abs/2310.10134",
+   "code": null,
+   "note": "Continually learning agent that writes textual causal abstractions of action effects across trials.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "yuan2024craft",
+   "name": "CRAFT",
+   "title": "CRAFT: Customizing LLMs by Creating and Retrieving from Specialized Toolsets",
+   "authors": "Yuan et al.",
+   "venue": "ICLR 2024",
+   "year": 2024,
+   "date": "2023-09",
+   "paper": "https://arxiv.org/abs/2309.17428",
+   "code": null,
+   "note": "Creates and retrieves specialized toolsets built from verified task code.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "sumers2024coala",
+   "name": "CoALA",
+   "title": "Cognitive Architectures for Language Agents",
+   "authors": "Sumers et al.",
+   "venue": "TMLR 2024",
+   "year": 2024,
+   "date": "2023-09",
+   "paper": "https://arxiv.org/abs/2309.02427",
+   "code": "https://github.com/ysymyth/awesome-language-agents",
+   "note": "Cognitive architecture for language agents with episodic, semantic, and procedural memory modules.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "liu2024autocalibrate",
+   "name": "AutoCalibrate",
+   "title": "Calibrating LLM-Based Evaluator",
+   "authors": "Liu et al.",
+   "venue": "LREC-COLING 2024",
+   "year": 2024,
+   "date": "2023-09",
+   "paper": "https://arxiv.org/abs/2309.13308",
+   "code": null,
+   "note": "Calibrates LLM evaluators by revising scoring criteria from earlier evaluation errors.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "yao2024retroformer",
+   "name": "Retroformer",
+   "title": "Retroformer: Retrospective Large Language Agents with Policy Gradient Optimization",
+   "authors": "Yao et al.",
+   "venue": "ICLR 2024",
+   "year": 2024,
+   "date": "2023-08",
+   "paper": "https://arxiv.org/abs/2308.02151",
+   "code": "https://github.com/weirayao/retroformer",
+   "note": "Fine-tunes a retrospective reflection model with policy gradients on the change in return over the next trial.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "wang2024survey",
+   "name": "LLM-based Autonomous Agents Survey",
+   "title": "A survey on large language model based autonomous agents",
+   "authors": "Wang et al.",
+   "venue": "Frontiers of Computer Science 2024",
+   "year": 2024,
+   "date": "2023-08",
+   "paper": "https://arxiv.org/abs/2308.11432",
+   "code": "https://github.com/paitesanshi/llm-agent-survey",
+   "note": "Broad survey of LLM-based autonomous agents: profile, memory, planning, and action modules.",
+   "categories": [
+    "surveys"
+   ]
+  },
+  {
+   "id": "zhao2024expel",
+   "name": "ExpeL",
+   "title": "ExpeL: LLM Agents Are Experiential Learners",
+   "authors": "Zhao et al.",
+   "venue": "AAAI 2024",
+   "year": 2024,
+   "date": "2023-08",
+   "paper": "https://arxiv.org/abs/2308.10144",
+   "code": "https://github.com/LeapLabTHU/ExpeL",
+   "note": "Compares success–failure pairs and recurring successes to extract insights retained alongside source trajectories.",
+   "categories": [
+    "formation.semantic",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "zheng2024synapse",
+   "name": "Synapse",
+   "title": "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control",
+   "authors": "Zheng et al.",
+   "venue": "ICLR 2024",
+   "year": 2024,
+   "date": "2023-06",
+   "paper": "https://arxiv.org/abs/2306.07863",
+   "code": "https://github.com/ltzheng/synapse",
+   "note": "Trajectory-as-exemplar prompting with state abstraction that strips task-irrelevant interface details.",
+   "categories": [
+    "formation.trajectory",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "wang2023voyager",
+   "name": "Voyager",
+   "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+   "authors": "Wang et al.",
+   "venue": "TMLR 2024",
+   "year": 2024,
+   "date": "2023-05",
+   "paper": "https://arxiv.org/abs/2305.16291",
+   "code": "https://github.com/MineDojo/Voyager",
+   "note": "Lifelong Minecraft agent with an automatic curriculum and an executable code-skill library refined by environment feedback.",
+   "categories": [
+    "formation.procedural",
+    "app.embodied",
+    "organization.flat"
+   ]
+  },
+  {
+   "id": "memorybank2023",
+   "name": "MemoryBank",
+   "title": "MemoryBank: Enhancing Large Language Models with Long-Term Memory",
+   "authors": "Zhong et al.",
+   "venue": "AAAI 2024",
+   "year": 2024,
+   "date": "2023-05",
+   "paper": "https://arxiv.org/abs/2305.10250",
+   "code": "https://github.com/zhongwanjun/memorybank-siliconfriend",
+   "note": "Long-term memory with Ebbinghaus-style decay and recall reinforcement (adjacent: conversational memory).",
+   "categories": [
+    "maintenance.retirement"
+   ]
+  },
+  {
+   "id": "liu2023evalplus",
+   "name": "EvalPlus",
+   "title": "Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation",
+   "authors": "Liu et al.",
+   "venue": "NeurIPS 2023",
+   "year": 2023,
+   "date": "2023-05",
+   "paper": "https://arxiv.org/abs/2305.01210",
+   "code": "https://github.com/evalplus/evalplus",
+   "note": "Rigorous code evaluation with extra admissible inputs; a template for checking unit correctness.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "sun2023adaplanner",
+   "name": "AdaPlanner",
+   "title": "AdaPlanner: Adaptive Planning from Feedback with Language Models",
+   "authors": "Sun et al.",
+   "venue": "NeurIPS 2023",
+   "year": 2023,
+   "date": "2023-05",
+   "paper": "https://arxiv.org/abs/2305.16653",
+   "code": "https://github.com/haotiansun14/adaplanner",
+   "note": "Adaptive planning from feedback; reuses successful plans and resumes from intermediate states after failures.",
+   "categories": [
+    "utilization.application"
+   ]
+  },
+  {
+   "id": "shinn2023reflexion",
+   "name": "Reflexion",
+   "title": "Reflexion: Language agents with verbal reinforcement learning",
+   "authors": "Shinn et al.",
+   "venue": "NeurIPS 2023",
+   "year": 2023,
+   "date": "2023-03",
+   "paper": "https://arxiv.org/abs/2303.11366",
+   "code": null,
+   "note": "Verbal reinforcement: reflects on feedback and stores the reflection to guide the next attempt.",
+   "categories": [
+    "formation.semantic"
+   ]
+  },
+  {
+   "id": "yao2023react",
+   "name": "ReAct",
+   "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+   "authors": "Yao et al.",
+   "venue": "ICLR 2023",
+   "year": 2023,
+   "date": "2022-10",
+   "paper": "https://arxiv.org/abs/2210.03629",
+   "code": null,
+   "note": "Interleaves reasoning and acting; the trajectory format most experience-driven agents learn from.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "valmeekam2023planbench",
+   "name": "PlanBench",
+   "title": "PlanBench: An Extensible Benchmark for Evaluating Large Language Models on Planning and Reasoning about Change",
+   "authors": "Valmeekam et al.",
+   "venue": "NeurIPS 2023",
+   "year": 2023,
+   "date": "2022-06",
+   "paper": "https://arxiv.org/abs/2206.10498",
+   "code": null,
+   "note": "Checks natural-language plans against an action model, separating illegal steps from goal-missing plans.",
+   "categories": [
+    "evaluation.intrinsic"
+   ]
+  },
+  {
+   "id": "lewis2020retrieval",
+   "name": "RAG",
+   "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+   "authors": "Lewis et al.",
+   "venue": "NeurIPS 2020",
+   "year": 2020,
+   "date": "2020-05",
+   "paper": "https://arxiv.org/abs/2005.11401",
+   "code": null,
+   "note": "Retrieval-augmented generation; supplies the storage and retrieval interfaces through which experience is organized and used.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "aamodt1994casebased",
+   "name": "Case-Based Reasoning",
+   "title": "Case-Based Reasoning: Foundational Issues, Methodological Variations, and System Approaches",
+   "authors": "Aamodt et al.",
+   "venue": "AI Communications 1994",
+   "year": 1994,
+   "date": null,
+   "paper": "https://www.cs.auckland.ac.nz/~ian/CBR/AICom.pdf",
+   "code": null,
+   "note": "Classic retrieve-reuse-revise-retain cycle; the closest conceptual precedent for experience-driven agents.",
+   "categories": [
+    "foundations"
+   ]
+  },
+  {
+   "id": "lin1992self",
+   "name": "Experience Replay (Lin 1992)",
+   "title": "Self-improving reactive agents based on reinforcement learning, planning and teaching",
+   "authors": "Lin",
+   "venue": "Machine Learning 1992",
+   "year": 1992,
+   "date": null,
+   "paper": "https://doi.org/10.1007/BF00992699",
+   "code": null,
+   "note": "Early RL work replaying interaction experience to improve reactive agents; the RL sense of 'experience'.",
+   "categories": [
+    "foundations"
+   ]
+  }
+ ]
+}

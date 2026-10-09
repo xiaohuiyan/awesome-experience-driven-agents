@@ -1,0 +1,147 @@
+# Taxonomy of the list. Follows the lifecycle view of the survey
+# "From Trajectories to Experience: A Survey of Experience-Driven LLM Agents".
+# Each paper in papers.yaml lists one or more of the category ids below; the first is its primary home.
+
+- id: surveys
+  title: Surveys and Position Papers
+  emoji: "📚"
+  description: Related surveys on agent memory, skills, and self-evolving agents, plus position papers.
+
+- id: foundations
+  title: Foundations and Related Directions
+  emoji: "🧱"
+  description: >-
+    Mechanisms that experience-driven agents build on (acting, retrieval, cognitive architectures)
+    and neighbouring paradigms such as case-based reasoning, reinforcement learning, and self-improvement.
+
+- id: formation
+  title: Experience Formation
+  emoji: "🧪"
+  description: >-
+    Selecting or deriving candidate experience from task-execution trajectories and their feedback.
+    The survey distinguishes three forms by how the experience guides behaviour.
+  children:
+    - id: formation.trajectory
+      title: Trajectory-Level Experience
+      description: Trajectories kept as precedents, selected, annotated, compressed, or reconstructed for reuse.
+    - id: formation.semantic
+      title: Semantic-Level Experience
+      description: Lessons, insights, rules, and guidelines abstracted through reflection, trajectory comparison, and cross-trajectory generalization.
+    - id: formation.procedural
+      title: Procedural-Level Experience
+      description: Reusable workflows, skills, and programs extracted, synthesized, and verified from execution.
+
+- id: organization
+  title: Experience Organization
+  emoji: "🗂️"
+  description: Making retained experience accessible, from flat stores to trees, graphs, and hierarchical graphs.
+  children:
+    - id: organization.flat
+      title: Flat Organization
+      description: Independent entries keyed for direct lookup, ranking, or utility weighting.
+    - id: organization.tree
+      title: Tree-Structured Organization
+      description: Index trees that organize access to records, and content trees that organize relations within guidance.
+    - id: organization.graph
+      title: Graph-Structured Organization
+      description: Record graphs, transition graphs, and skill graphs that connect precedents, operations, and capabilities.
+    - id: organization.hierarchical
+      title: Hierarchical Graph Organization
+      description: Layered graphs that link units across roles, and nested graphs that open up the inside of a reusable unit.
+
+- id: utilization
+  title: Experience Utilization
+  emoji: "🎯"
+  description: >-
+    Applying experience to current decisions: when to seek it, which to use, how to adapt it,
+    how it shapes behaviour, and when to internalize it into model parameters.
+  children:
+    - id: utilization.triggering
+      title: Experience Triggering
+      description: Schedules, uncertainty signals, and learned policies that decide when to consult experience.
+    - id: utilization.selection
+      title: Experience Selection
+      description: Retrieval, reranking and filtering, and allocation of experience across multiple agents.
+    - id: utilization.adaptation
+      title: Experience Adaptation
+      description: Contextual grounding, guidance specialization, procedural reconfiguration, and feedback-guided revision before reuse.
+    - id: utilization.application
+      title: Experience Application
+      description: How guidance shapes interpretation, generation, procedure reuse, decision-making, and evaluation.
+    - id: utilization.internalization
+      title: Experience Internalization
+      description: Moving explicit guidance into model parameters through training on experience-shaped trajectories.
+
+- id: maintenance
+  title: Experience Maintenance
+  emoji: "🛠️"
+  description: Admitting, consolidating, revising, and retiring experience as evidence accumulates, and keeping its evolution safe.
+  children:
+    - id: maintenance.admission
+      title: Experience Admission
+      description: Success gates, consistency checks, and replay-based validation before experience enters the repository.
+    - id: maintenance.consolidation
+      title: Experience Consolidation
+      description: Integrating repeated and related experience through targeted or region-level merging.
+    - id: maintenance.refinement
+      title: Experience Refinement
+      description: Diagnosing defects in retained guidance, revising it, and validating the revision.
+    - id: maintenance.retirement
+      title: Experience Retirement
+      description: Reducing the availability of stale or low-utility experience by pruning, down-weighting, or archiving.
+    - id: maintenance.coordination
+      title: Coordinating Maintenance
+      description: Learned or joint policies that align memory operations with formation and retrieval.
+    - id: maintenance.safety
+      title: Safeguarding Experience Evolution
+      description: Poisoning attacks, provenance, rollback, repair, and unlearning for evolving experience.
+
+- id: evaluation
+  title: Evaluation and Benchmarks
+  emoji: "📏"
+  description: >-
+    Evaluating intrinsic experience quality, the utilization process, and downstream effects, separating
+    fixed experience reuse from feedback-driven sustained improvement and improvement of the learning mechanism.
+  children:
+    - id: evaluation.reliability
+      title: Scoring Reliability and Feedback Access
+      description: Whether the scores and feedback that experience is learned and judged from can be trusted.
+    - id: evaluation.intrinsic
+      title: Intrinsic Experience Quality
+      description: Correctness, evidential support, coherence, and actionability of experience units and repositories.
+    - id: evaluation.process
+      title: Utilization Process
+      description: Scoring triggering, selection, adaptation, and application, and attributing behaviour to supplied experience.
+    - id: evaluation.downstream
+      title: Downstream Effects and Transfer
+      description: Immediate effectiveness of reuse, amortized cost, transfer, and harmful reuse.
+    - id: evaluation.sustained
+      title: Sustained Improvement and Continual Learning
+      description: Benchmarks for updating experience over streams, regression and forgetting, and meta-level learning.
+
+- id: app
+  title: Applications
+  emoji: "🌐"
+  description: Experience-driven agents in seven application settings.
+  children:
+    - id: app.qa
+      title: Question Answering
+      description: Solution templates, search lessons, and tool-use procedures for QA and reasoning.
+    - id: app.swe
+      title: Software Engineering
+      description: Issue resolution, environment setup, and repair with trajectory- or human-derived experience.
+    - id: app.computer-use
+      title: Computer Use
+      description: Web, desktop, and mobile agents that retain workflows, skills, and interface knowledge.
+    - id: app.recsys
+      title: Recommender Systems
+      description: User-level and shared guidance revised from recommendation feedback.
+    - id: app.embodied
+      title: Embodied Control
+      description: Plans, skills, and lessons reused by embodied and robotic agents.
+    - id: app.science
+      title: Scientific Research
+      description: Data science, machine-learning engineering, and AI-scientist agents.
+    - id: app.finance
+      title: Financial Trading and Forecasting
+      description: Reflection-driven trading and event forecasting agents.
