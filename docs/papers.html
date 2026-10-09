@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper List · Awesome Experience-Driven Agents</title>
+  <meta name="description" content="Searchable list of the works reviewed in the survey From Trajectories to Experience, filterable by lifecycle stage, subcategory, year, and code availability.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body data-page="papers">
+  <nav class="topnav" aria-label="Site">
+    <div class="wrap topnav-inner">
+      <a class="brand" href="index.html">🧭 Experience-Driven Agents</a>
+      <div class="topnav-links">
+        <a href="index.html">Overview</a>
+        <a href="papers.html" aria-current="page">Paper List</a>
+        <button class="nav-btn" type="button" data-open-bibtex aria-haspopup="dialog">BibTeX</button>
+        <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">GitHub</a>
+        <button id="theme" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="wrap">
+      <h1>Paper List</h1>
+      <p class="lede">The works reviewed in the survey, organized by its lifecycle taxonomy. Each note summarizes how the survey characterizes the work;
+        systems the survey marks as <em>adjacent</em> (general or conversational memory outside its experience scope) say so in their notes.
+        New to the taxonomy? Start with the <a href="index.html#framework">overview</a>.</p>
+      <div class="stats" id="stats" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Filters">
+      <div class="search-row">
+        <input id="q" type="search" placeholder="Search names, titles, authors, notes…  (press / to focus)" autocomplete="off" aria-label="Search papers">
+        <select id="sort" aria-label="Sort order">
+          <option value="new">Newest first</option>
+          <option value="old">Oldest first</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <nav class="tabs" id="stages" aria-label="Lifecycle stage"></nav>
+      <div class="chips" id="subcats" aria-label="Subcategory"></div>
+      <div class="filter-row">
+        <div class="chips small" id="years" aria-label="Year"></div>
+        <label class="toggle"><input type="checkbox" id="hascode"> <span>Has code</span></label>
+        <button id="reset" class="link-btn" type="button">Reset filters</button>
+      </div>
+    </section>
+
+    <p class="cat-desc" id="catdesc"></p>
+    <p class="count" id="count"></p>
+    <ol class="list" id="list"></ol>
+    <p class="empty" id="empty" hidden>No papers match these filters.</p>
+  </main>
+
+  <dialog id="bibtex-dialog" aria-labelledby="bibtex-title">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <h2 id="bibtex-title">Cite this survey</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Close">✕</button>
+      </div>
+      <p class="muted">If this list helps your research, please cite
+        <em>From Trajectories to Experience: A Survey of Experience-Driven LLM Agents</em>.</p>
+      <pre class="bibtex"><code id="bibtex-code"></code></pre>
+      <div class="dialog-actions">
+        <span class="copy-status" id="bibtex-status" role="status" aria-live="polite"></span>
+        <button class="btn primary" type="button" id="bibtex-copy">Copy BibTeX</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="wrap footer">
+    <p><button class="link-btn" type="button" data-open-bibtex>Cite the survey (BibTeX)</button> ·
+      <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/CONTRIBUTING.md">Suggest a paper</a> ·
+      Data: <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/data/papers.yaml">data/papers.yaml</a> ·
+      Licensed <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/LICENSE">CC0-1.0</a></p>
+  </footer>
+
+  <script src="common.js?v=3"></script>
+  <script src="papers.js?v=3"></script>
+</body>
+</html>

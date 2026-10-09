@@ -3,77 +3,527 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Awesome Experience-Driven Agents</title>
-  <meta name="description" content="A searchable list of research on LLM agents that learn from their own task-execution trajectories: experience formation, organization, utilization, and maintenance.">
+  <title>From Trajectories to Experience · Experience-Driven LLM Agents</title>
+  <meta name="description" content="Overview of the survey From Trajectories to Experience: A Survey of Experience-Driven LLM Agents — definitions, the experience lifecycle framework, evaluation standards, applications, main conclusions, and open problems.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
-<body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-top">
-        <p class="eyebrow">Awesome list · companion to the survey</p>
+<body data-page="overview">
+  <nav class="topnav" aria-label="Site">
+    <div class="wrap topnav-inner">
+      <a class="brand" href="index.html">🧭 Experience-Driven Agents</a>
+      <div class="topnav-links">
+        <a href="index.html" aria-current="page">Overview</a>
+        <a href="papers.html">Paper List</a>
+        <button class="nav-btn" type="button" data-open-bibtex aria-haspopup="dialog">BibTeX</button>
+        <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">GitHub</a>
         <button id="theme" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
       </div>
-      <h1>Awesome Experience-Driven Agents</h1>
-      <p class="lede">Research on LLM agents that learn from their own task-execution trajectories: how <b>experience</b> is
-        <span class="stage-word s-formation">formed</span>,
-        <span class="stage-word s-organization">organized</span>,
-        <span class="stage-word s-utilization">utilized</span>, and
-        <span class="stage-word s-maintenance">maintained</span>.</p>
-      <div class="stats" id="stats" aria-live="polite"></div>
+    </div>
+  </nav>
+
+  <header class="hero survey-hero">
+    <div class="wrap">
+      <p class="eyebrow">Survey · 2026 · preprint coming soon</p>
+      <h1>From Trajectories to Experience</h1>
+      <p class="subtitle">A Survey of Experience-Driven LLM Agents</p>
+      <p class="authors">Xiaohui Yan<sup>1</sup>, Yingchen Zhang<sup>2</sup>, Shiyao Liu<sup>2</sup>, Xiaofei Huang<sup>2</sup>, Yuxin Yue<sup>2</sup>,
+        Zaiyu Xia<sup>2</sup>, Jiayu Yao<sup>2</sup>, Xinjie Chen<sup>2</sup>, Yun Hu<sup>1</sup>, FuRong Li<sup>1</sup>, Shenghua Liu<sup>2</sup>,
+        Yixing Fan<sup>2</sup>, Zixuan Li<sup>2</sup>, Ruqing Zhang<sup>2</sup>, Jiafeng Guo<sup>2</sup></p>
+      <p class="affil"><sup>1</sup>Huawei Technologies Co., Ltd &nbsp;·&nbsp; <sup>2</sup>Institute of Computing Technology, Chinese Academy of Sciences</p>
+      <p class="question">How can an LLM agent turn its trajectories into guidance that improves later behavior, and how can we tell when it does?</p>
       <div class="hero-links">
-        <a class="btn primary" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">★ GitHub repository</a>
+        <a class="btn primary" href="papers.html">📚 Browse the paper list (<span data-count="all">271</span>)</a>
         <button class="btn" type="button" data-open-bibtex aria-haspopup="dialog">❝ BibTeX</button>
-        <a class="btn" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/CONTRIBUTING.md">Suggest a paper</a>
-        <a class="btn" href="#about">About the taxonomy</a>
+        <a class="btn" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">★ GitHub</a>
       </div>
+      <ul class="kpis" aria-label="The survey in numbers">
+        <li><b>3</b><span>representational forms</span></li>
+        <li><b>4</b><span>lifecycle functions</span></li>
+        <li><b>3</b><span>improvement claims</span></li>
+        <li><b>7</b><span>application settings</span></li>
+        <li><b>8</b><span>open problems</span></li>
+        <li><b data-count="all">271</b><span>reviewed works</span></li>
+      </ul>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="controls" aria-label="Filters">
-      <div class="search-row">
-        <input id="q" type="search" placeholder="Search names, titles, authors, notes…  (press / to focus)" autocomplete="off" aria-label="Search papers">
-        <select id="sort" aria-label="Sort order">
-          <option value="new">Newest first</option>
-          <option value="old">Oldest first</option>
-          <option value="name">Name A–Z</option>
-        </select>
-      </div>
-      <nav class="tabs" id="stages" aria-label="Lifecycle stage"></nav>
-      <div class="chips" id="subcats" aria-label="Subcategory"></div>
-      <div class="filter-row">
-        <div class="chips small" id="years" aria-label="Year"></div>
-        <label class="toggle"><input type="checkbox" id="hascode"> <span>Has code</span></label>
-        <button id="reset" class="link-btn" type="button">Reset filters</button>
-      </div>
-    </section>
+  <div class="wrap doc-layout">
+    <aside class="toc" aria-label="On this page">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#glance">At a glance</a></li>
+        <li><a href="#era">Why experience</a></li>
+        <li><a href="#foundations">Foundations</a>
+          <ol>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#forms">Three forms</a></li>
+            <li><a href="#unit">Experience unit</a></li>
+            <li><a href="#types">Experience types</a></li>
+            <li><a href="#loop">Experience loop</a></li>
+          </ol>
+        </li>
+        <li><a href="#framework">Lifecycle framework</a>
+          <ol>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#organization">Organization</a></li>
+            <li><a href="#utilization">Utilization</a></li>
+            <li><a href="#maintenance">Maintenance</a></li>
+          </ol>
+        </li>
+        <li><a href="#evaluation">Evaluation</a></li>
+        <li><a href="#applications">Applications</a></li>
+        <li><a href="#conclusions">Main conclusions</a></li>
+        <li><a href="#open-problems">Open problems</a></li>
+        <li><a href="#cite">Cite</a></li>
+      </ol>
+      <a class="toc-cta" href="papers.html">Paper list →</a>
+    </aside>
 
-    <p class="cat-desc" id="catdesc"></p>
-    <p class="count" id="count"></p>
-    <ol class="list" id="list"></ol>
-    <p class="empty" id="empty" hidden>No papers match these filters.</p>
+    <main class="doc">
+      <!-- ============ AT A GLANCE ============ -->
+      <section id="glance">
+        <h2>At a Glance</h2>
+        <p>LLM agents record in their trajectories which strategies failed and how they recovered, yet an agent that resolves a problem in one
+          episode may repeat the same diagnostic detour in the next. Work on reflection, agent memory, workflow learning, and skill acquisition
+          addresses this gap under different names: a distilled lesson is a <em>self-reflection</em> in Reflexion, an <em>insight</em> in ExpeL,
+          a <em>causal abstraction</em> in CLIN, and a <em>memory item</em> in ReasoningBank. Because names and content do not line up, it is hard
+          to see which guidance a method retains, when that guidance applies, and how to compare reported gains.</p>
+        <p>The survey makes four contributions.</p>
+        <div class="cards cols-2">
+          <div class="card-x"><span class="num">1</span><h3>A unified framework</h3>
+            <p>Every experience unit, whether a precedent, a lesson, or a procedure, is described by its <b>guidance</b>, <b>applicability conditions</b>,
+              <b>execution evidence</b>, and <b>reliability evaluation</b>. Mechanisms are organized by four lifecycle functions:
+              formation, organization, utilization, and maintenance.</p></div>
+          <div class="card-x"><span class="num">2</span><h3>Evidence standards</h3>
+            <p>Evaluation of intrinsic experience quality, the experience utilization process, and downstream effects is connected to three
+              improvement claims: fixed experience reuse, feedback-driven sustained improvement, and improvement of the learning mechanism.</p></div>
+          <div class="card-x"><span class="num">3</span><h3>Application analysis</h3>
+            <p>Seven application settings are related to four conditions: how often tasks recur, how quickly feedback arrives, whether outcomes can
+              be checked, and how readily environmental changes invalidate earlier guidance.</p></div>
+          <div class="card-x"><span class="num">4</span><h3>Research agenda</h3>
+            <p>Eight open problems, from learning with human expert records to correcting propagated errors, aimed at improvement that is
+              <em>cumulative, transferable, and correctable</em>.</p></div>
+        </div>
+      </section>
 
-    <section id="about" class="about">
-      <h2>About the taxonomy</h2>
-      <p>The list follows the survey <em>From Trajectories to Experience: A Survey of Experience-Driven LLM Agents</em>
-        (preprint coming soon). <b>Agent experience</b> is action-guiding information grounded in task-execution trajectories and retained to guide later episodes where it applies:
-        a trajectory kept as a precedent, a semantic lesson, or a reusable procedure.</p>
-      <figure>
-        <img src="assets/lifecycle.png" alt="Lifecycle of agent experience: trajectories and feedback feed experience formation; maintenance and organization manage an experience repository; utilization supplies selected and adapted guidance that steers subsequent execution." loading="lazy">
-        <figcaption>The four lifecycle functions around an experience repository.</figcaption>
-      </figure>
-      <ul class="defs">
-        <li><b class="s-formation">Formation</b> selects or derives candidate experience from trajectories.</li>
-        <li><b class="s-organization">Organization</b> makes it accessible.</li>
-        <li><b class="s-utilization">Utilization</b> applies it to current decisions or internalizes it into model parameters.</li>
-        <li><b class="s-maintenance">Maintenance</b> admits, consolidates, revises, and retires it as evidence accumulates.</li>
-      </ul>
-      <p class="muted">Notes on each entry summarize how the survey characterizes the work. Systems the survey marks as <em>adjacent</em>
-        (general or conversational memory outside its experience scope) say so in their notes.</p>
-    </section>
-  </main>
+      <!-- ============ ERA ============ -->
+      <section id="era">
+        <h2>From LLMs to Experience-Driven Agents</h2>
+        <figure class="fig">
+          <img src="assets/LLM-to-Agent-Era-II.png" alt="Three capability emphases: Era of LLM (Know), Era of Agent (Know + Act), Era of Experience (Know + Act + Evolve)." loading="lazy">
+          <figcaption>Three capability emphases. Each keeps the capabilities of the previous one and adds to them; the experience loop is the focus of the survey.</figcaption>
+        </figure>
+        <div class="cards cols-3">
+          <div class="card-x"><h3>Era of LLM · <em>Know</em></h3><p>A knowledge-centric paradigm: pretrained models encode knowledge, retrieval-augmented generation supplies more, and chain-of-thought helps models reason with it.</p></div>
+          <div class="card-x"><h3>Era of Agent · <em>Know + Act</em></h3><p>An execution-centric paradigm built on planning, tool use, and runtime feedback. Correcting an error within one attempt, however, does not automatically improve the next.</p></div>
+          <div class="card-x accent"><h3>Era of Experience · <em>Know + Act + Evolve</em></h3><p>An experience-centric paradigm: retain what trajectories reveal in an explicitly accessible form, use it to guide later episodes, and revise it as feedback accumulates.</p></div>
+        </div>
+        <figure class="fig">
+          <img src="assets/experience-configurations.png" alt="An experienceless agent repeats an import error; an experience-driven agent verifies its fix, stores the lesson, and reuses it in the next episode." loading="lazy">
+          <figcaption>An experienceless agent versus an experience-driven agent. After verifying a fix, the experience-driven agent stores
+            “on import errors, check dependencies” in its experience repository and reuses it in episode <i>k</i>+1.</figcaption>
+        </figure>
+        <p>Agents differ in whether their retained experience changes during later work. In <b>fixed-repository reuse</b> the repository stays
+          fixed; in <b>closed-loop learning</b> later trajectories inform the formation and maintenance of experience, and the updated repository
+          guides subsequent episodes. This cycle is the <em>experience loop</em>. One success supports a lesson only in comparable situations:
+          another import failure may have a different cause.</p>
+      </section>
+
+      <!-- ============ FOUNDATIONS ============ -->
+      <section id="foundations">
+        <h2>Foundations</h2>
+
+        <h3 id="definition">What counts as agent experience</h3>
+        <blockquote class="definition">
+          <p><b>Agent experience</b> is action-guiding information that is grounded in one or more task-execution trajectories and retained
+            to guide later episodes where it applies.</p>
+        </blockquote>
+        <div class="cards cols-3">
+          <div class="card-x"><h4>Execution grounding</h4><p>The information derives from task-execution trajectories: the agent's own, other agents', or human practice, including skills people author from their own work.</p></div>
+          <div class="card-x"><h4>Cross-episode retention</h4><p>It is kept beyond the episode that produced it. A correction discarded together with the attempt is not experience.</p></div>
+          <div class="card-x"><h4>Behavioral relevance</h4><p>Its role is to shape later behavior: interpreting a question, producing an answer, evaluating a solution, or acting in an environment.</p></div>
+        </div>
+        <p class="note">Correctness and benefit are <b>not</b> required: later checks test them. Outside the core scope are audit-only logs, factual or
+          preference memory without a guidance role, instructions with no task practice behind them (generic instructions, tool documentation),
+          and learning solely through parameter updates.</p>
+
+        <h3 id="forms">Three representational forms</h3>
+        <p>Consider one code-repair episode: tests fail at the import stage, the agent traces the failure to a declared dependency missing from the
+          active environment, restores it, and confirms that the import succeeds. The agent can retain three forms of experience from it.</p>
+        <div class="cards cols-3 forms">
+          <div class="card-x form-traj"><p class="kicker">Trajectory-level · precedent</p>
+            <p><b>Retained:</b> a diagnostic example — the import error, relevant environment details, dependency checks, repair action, and successful import check.</p>
+            <p><b>Guides by:</b> showing how a comparable failure was diagnosed and fixed.</p>
+            <p class="eg">e.g. RAP, Synapse, JARVIS-1</p></div>
+          <div class="card-x form-sem"><p class="kicker">Semantic-level · lesson</p>
+            <p><b>Retained:</b> “When tests fail during import in a comparable setup, check declared dependencies and the active environment before changing application logic.”</p>
+            <p><b>Guides by:</b> prioritizing an environment check without assuming the new failure has the same cause.</p>
+            <p class="eg">e.g. Reflexion, ExpeL, AutoGuide</p></div>
+          <div class="card-x form-proc"><p class="kicker">Procedural-level · procedure</p>
+            <p><b>Retained:</b> inspect the error; compare declared dependencies with the active environment; resolve a confirmed mismatch within task permissions; rerun the import check.</p>
+            <p><b>Guides by:</b> ordered steps, with current observations deciding whether a repair is warranted.</p>
+            <p class="eg">e.g. Voyager, AWM, SkillWeaver</p></div>
+        </div>
+        <p>Form describes only how guidance is expressed. The levels are not stages of maturity and do not rank generality: a scoped lesson can apply
+          as narrowly as the precedent it came from, and several forms can coexist. All three have developed side by side since 2023.</p>
+        <figure class="fig">
+          <img src="assets/method-tree.png" alt="Representative experience-driven agents grouped into trajectory-level, semantic-level, and procedural-level branches by year from 2023 to 2026." loading="lazy">
+          <figcaption>Representative experience-driven agents by principal form and year of first release. Branches group methods by form and do not indicate lineage.</figcaption>
+        </figure>
+
+        <h3 id="unit">The experience unit ⟨g, c, e, r⟩</h3>
+        <p>Whatever its form, every piece of experience — an <em>experience unit</em> — can be described along four analytical dimensions. They are
+          questions to ask of any unit, not fields a system must store.</p>
+        <p class="formula"><i>E</i><sub><i>i</i></sub> = ⟨ <i>g</i><sub><i>i</i></sub>, <i>c</i><sub><i>i</i></sub>, <i>e</i><sub><i>i</i></sub>, <i>r</i><sub><i>i</i></sub> ⟩</p>
+        <div class="cards cols-4 dims">
+          <div class="card-x"><p class="sym">g</p><h4>Guidance</h4><p>What the unit tells the agent to do, avoid, check, or consult.</p><p class="eg">Check declared dependencies and the active environment first.</p></div>
+          <div class="card-x"><p class="sym">c</p><h4>Applicability conditions</h4><p>Task, environment, tool, and executor assumptions under which it applies.</p><p class="eg">An import-stage failure, a comparable setup, permission to inspect the environment.</p></div>
+          <div class="card-x"><p class="sym">e</p><h4>Execution evidence</h4><p>The trajectories, or parts of them, that support it, and any counterexamples.</p><p class="eg">The error, the inspection, the repair, the passing import check.</p></div>
+          <div class="card-x"><p class="sym">r</p><h4>Reliability evaluation</h4><p>How strong that support is and how uncertain it remains.</p><p class="eg">Provisional after a single episode.</p></div>
+        </div>
+        <p class="note"><b>Reliability</b> asks whether guidance is well supported under its stated conditions. <b>Utility</b> asks whether using it pays off
+          for a particular executor and task; it depends on context and is not a fixed attribute of the unit. If the executor already checks
+          dependencies unprompted, the lesson may be reliable yet add little utility.</p>
+
+        <h3 id="types">Four experience types</h3>
+        <p>Independently of form, experience can be classified by the execution outcome its guidance draws on. Each type needs a different check before its guidance is relied on.</p>
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead><tr><th>Type</th><th>Evidence drawn on</th><th>Main caution</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td><b>Success</b></td><td>A successful trajectory</td><td>Success does not show which steps were necessary, and its label may be wrong.</td><td>AWM, Voyager</td></tr>
+              <tr><td><b>Failure</b></td><td>A failed trajectory, with its feedback</td><td>A diagnosis that blames the wrong step yields an overly broad prohibition.</td><td>Reflexion, ReasoningBank</td></tr>
+              <tr><td><b>Comparative</b></td><td>Successful and failed attempts at comparable tasks</td><td>Unless attempts are aligned, a difference may reflect the environment or task difficulty.</td><td>ExpeL, AutoGuide</td></tr>
+              <tr><td><b>Corrective</b></td><td>An error linked to the change that resolved it</td><td>The same error may have a different cause in a new setting.</td><td>EXG</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="loop">The experience loop</h3>
+        <p>During episode <i>k</i>, retained experience is turned into <em>situated guidance</em> for the current decision:</p>
+        <p class="formula"><i>A</i><sub><i>k,t</i></sub> = Utilize(<i>R</i><sub><i>k</i></sub>, <i>q</i><sub><i>k</i></sub>, <b>h</b><sub><i>k</i>,≤<i>t</i></sub>)</p>
+        <p>Closed-loop learning adds a path from execution back to the experience repository <i>R</i>:</p>
+        <p class="formula stack">(<i>y</i><sub><i>k</i></sub>, <i>T</i><sub><i>k</i></sub>) = Execute(<i>q</i><sub><i>k</i></sub>, <i>R</i><sub><i>k</i></sub>)<br>
+          𝓔<sub><i>k</i></sub> = Form(<i>T</i><sub><i>k</i></sub>, <i>R</i><sub><i>k</i></sub>, 𝓗<sub>&lt;<i>k</i></sub>)<br>
+          <i>R</i><sub><i>k</i>+1</sub> = Update(<i>R</i><sub><i>k</i></sub>, 𝓔<sub><i>k</i></sub>, <i>T</i><sub><i>k</i></sub>)</p>
+        <p>Formation proposes a possibly empty set of candidate units 𝓔<sub><i>k</i></sub>; maintenance decides which enter <i>R</i><sub><i>k</i>+1</sub> and how
+          retained units change. An experienceless agent never receives situated guidance, fixed-repository reuse keeps <i>R</i><sub><i>k</i></sub> unchanged,
+          and producing <i>A</i><sub><i>k,t</i></sub> does not by itself retain a new unit.</p>
+      </section>
+
+      <!-- ============ FRAMEWORK ============ -->
+      <section id="framework">
+        <h2>The Experience Lifecycle Framework</h2>
+        <p>Making the experience loop work requires four kinds of decisions: what to learn from a trajectory, how to store it so that it can be
+          found, how to use it to guide behavior or train the executor, and what to keep or change as evidence accumulates.</p>
+        <figure class="fig">
+          <img src="assets/lifecycle.png" alt="The experience lifecycle: formation derives candidates, maintenance and organization manage the experience repository, and utilization supplies guidance for subsequent execution." loading="lazy">
+          <figcaption>The agent experience lifecycle, illustrated through runtime reuse. Training-time internalization provides another utilization route.</figcaption>
+        </figure>
+        <div class="table-wrap">
+          <table class="tbl">
+            <thead><tr><th>Function</th><th>Core question</th><th>Main responsibility</th></tr></thead>
+            <tbody>
+              <tr><td><b class="s-formation">Experience formation</b></td><td>What can be learned from past trajectories?</td><td>Select or derive candidate precedents, lessons, or procedures, and check that the trajectories support them.</td></tr>
+              <tr><td><b class="s-organization">Experience organization</b></td><td>How should experience be stored so that it can be found and interpreted?</td><td>Index experience and link it to its use contexts, applicability conditions, and related units.</td></tr>
+              <tr><td><b class="s-utilization">Experience utilization</b></td><td>How should experience guide behavior or train the executor?</td><td>Decide when to seek experience, which units to use, and how to adapt them; in training, use experience to shape trajectories and supervision.</td></tr>
+              <tr><td><b class="s-maintenance">Experience maintenance</b></td><td>What should be admitted, kept, revised, or retired?</td><td>Admit candidates, and revise, consolidate, or retire retained experience as evidence and conditions change.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The division also locates failures. For the dependency lesson, a version claiming that every import failure requires installing a
+          dependency points to unsupported generalization during <span class="s-formation">formation</span>; a retained lesson missing from the
+          lookup index points to <span class="s-organization">organization</span>; applying it despite incompatible environment assumptions points to
+          <span class="s-utilization">utilization</span>; and leaving it unchanged after new evidence contradicts it points to
+          <span class="s-maintenance">maintenance</span>.</p>
+
+        <!-- Formation -->
+        <article class="stage" id="formation" style="--stage: var(--formation)">
+          <header class="stage-head"><h3>Experience Formation</h3>
+            <a class="stage-link" href="papers.html#cat=formation">Browse <span data-count="formation">43</span> papers →</a></header>
+          <p>Formation turns trajectories into candidate experience: a precedent to consult, a lesson to apply, or a procedure to follow. The
+            survey's central argument here: <b>the more a mechanism adds beyond what the trajectories recorded, the more its support must come
+            from outside them</b> — through counterexamples, tests beyond the source tasks, or new execution.</p>
+          <figure class="fig">
+            <img src="assets/experience-formation.png" alt="Formation mechanisms for trajectory-level, semantic-level, and procedural-level experience." loading="lazy">
+          </figure>
+          <div class="cards cols-3 mech">
+            <div class="card-x form-traj"><h4>Trajectory-level</h4><ul>
+              <li>Select and annotate <span class="eg">RAP, SEER, TRAD</span></li>
+              <li>Segment and compress <span class="eg">Synapse</span></li>
+              <li>Relabel and reconstruct <span class="eg">ECHO, BAGEL, BREW</span></li></ul></div>
+            <div class="card-x form-sem"><h4>Semantic-level</h4><ul>
+              <li>Reflective abstraction <span class="eg">Reflexion, CLIN, ReasoningBank</span></li>
+              <li>Comparison and diagnosis <span class="eg">AutoGuide, ExpeL, TF-GRPO</span></li>
+              <li>Cross-trajectory generalization <span class="eg">AutoManual, EMG, EDV</span></li></ul></div>
+            <div class="card-x form-proc"><h4>Procedural-level</h4><ul>
+              <li>Extraction and parameterization <span class="eg">AWM, SSO, TraceCompiler</span></li>
+              <li>Synthesis and composition <span class="eg">Voyager, SkillWeaver, Metis</span></li>
+              <li>Execution-guided verification <span class="eg">ASI, SkillCAT, SkillOpt</span></li></ul></div>
+          </div>
+          <h4 class="takeaways">Key findings</h4>
+          <ul class="findings">
+            <li><b>Deciding more in advance pays off only while conditions stay stable.</b> A precedent leaves interpretation to the receiving agent,
+              a lesson states a conclusion, and a procedure fixes the steps. In Metis (AppWorld, GPT-4o executor), when each task could use only
+              memory from earlier tasks, text memory reached 73.3% task success against 53.3% for code.</li>
+            <li><b>No form wins on every benchmark.</b> In ExpeL, insights beat retrieved trajectories on HotpotQA (36% vs 31%) while trajectories
+              win on ALFWorld (55% vs 50%); in Memp on ALFWorld with GPT-4o, scripts alone reach 56.4%, trajectories 74.3%, and both 77.9%.
+              Complementary forms help.</li>
+            <li><b>Each formation check supports only what it tests.</b> Source success concerns the recorded behavior, a model's judgment remains an
+              interpretation, a successful rerun shows the candidate works under the tested conditions, and only held-out tasks test transfer.</li>
+          </ul>
+        </article>
+
+        <!-- Organization -->
+        <article class="stage" id="organization" style="--stage: var(--organization)">
+          <header class="stage-head"><h3>Experience Organization</h3>
+            <a class="stage-link" href="papers.html#cat=organization">Browse <span data-count="organization">47</span> papers →</a></header>
+          <p>A stored unit helps only if the agent can find it and reach the context needed to read it. Even a correct match leaves four questions:
+            <b>Q1</b> was the fix recorded with the failure? <b>Q2</b> is the condition under which it worked kept with it? <b>Q3</b> is the match one step of
+            a longer procedure, or related to other precedents? <b>Q4</b> can the agent open what lies behind or inside the match?</p>
+          <figure class="fig">
+            <img src="assets/experience-organization.png" alt="Flat, tree-structured, graph-structured, and hierarchical-graph experience organization." loading="lazy">
+          </figure>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead><tr><th>Pattern</th><th>Useful when</th><th>Upkeep and failure modes</th></tr></thead>
+              <tbody>
+                <tr><td><b>Flat</b></td><td>A symptom, task, or usage description matches the request, and the record itself holds the repair and its conditions (Q1–Q2).</td><td>Keys must anticipate later needs; a missing key fails silently and relations stay implicit.</td></tr>
+                <tr><td><b>Tree</b></td><td>Many similar records call for a narrower place to search, or the missing context is a broader group, containing routine, or base procedure (Q3).</td><td>Branch choices can omit records; revising a shared base affects every variant.</td></tr>
+                <tr><td><b>Graph</b></td><td>The repair, a continuation, or a supporting skill sits in another record that would not match on its own (Q1, Q3).</td><td>Relations must be built, checked, and updated; unreliable links and wide expansion mislead or overload access.</td></tr>
+                <tr><td><b>Hierarchical graph</b></td><td>The match needs its source trajectory or implementation, or must be checked or trimmed before use (Q4).</td><td>Cross-layer correspondences must stay consistent; expansion adds inspection cost.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="takeaways">Key findings</h4>
+          <ul class="findings">
+            <li><b>Better keys before added structure.</b> The right record is often missed only because of how it is keyed; keying it by the observable
+              symptom, as MemGovern's repair cards do with error signatures, is the cheaper first remedy. Added structure should beat that improved-key baseline.</li>
+            <li><b>Structure keeps conditions, evidence, and reliability reachable</b> — condition keys make applicability searchable and source links keep
+              supporting trajectories reachable — but the agent must still judge whether the guidance fits.</li>
+            <li><b>Reported ablations rarely isolate structure from content.</b> Removing a level or an edge usually removes what it holds, so whether
+              structure itself explains reported gains remains open.</li>
+          </ul>
+        </article>
+
+        <!-- Utilization -->
+        <article class="stage" id="utilization" style="--stage: var(--utilization)">
+          <header class="stage-head"><h3>Experience Utilization</h3>
+            <a class="stage-link" href="papers.html#cat=utilization">Browse <span data-count="utilization">60</span> papers →</a></header>
+          <p>An agent holding useful experience may still overlook it, follow a familiar procedure under the wrong conditions, or spend more effort
+            consulting experience than the task requires. At runtime, utilization answers four connected questions; during training,
+            experience can also be internalized into model parameters.</p>
+          <figure class="fig">
+            <img src="assets/experience-utilization.png" alt="Experience utilization: triggering, selection, adaptation, and application, with paths for direct reuse and continuing without experience." loading="lazy">
+          </figure>
+          <div class="cards cols-4 questions">
+            <div class="card-x"><h4>Experience triggering</h4><p class="q">When should the agent consult experience?</p><p>Fixed schedules, observed failures, internal-state signals, coach gates, learned policies.</p></div>
+            <div class="card-x"><h4>Experience selection</h4><p class="q">Which experience, if any, is worth using?</p><p>Retrieval, reranking and filtering, and allocation across multiple agents.</p></div>
+            <div class="card-x"><h4>Experience adaptation</h4><p class="q">What should change before reuse?</p><p>Contextual grounding, guidance specialization, procedural reconfiguration, feedback-guided revision.</p></div>
+            <div class="card-x"><h4>Experience application</h4><p class="q">How should guidance shape behavior?</p><p>Five functions: interpretation, generation, decision-making, procedure reuse, and evaluation.</p></div>
+          </div>
+          <p class="note"><b>Experience internalization</b> transfers experience-supported behavior into model or adapter parameters: training on
+            experience-shaped trajectories, distilling experience-conditioned policies, or withdrawing guidance during training.</p>
+          <h4 class="takeaways">Key findings</h4>
+          <ul class="findings">
+            <li><b>The four decisions share one budget.</b> Seeking, selecting, and adapting experience all cost resources before the guidance helps,
+              so inexpensive checks that could change the reuse decision belong before costly actions.</li>
+            <li><b>Recurrence decides whether experience is worth it.</b> On largely self-contained web tasks, giving an executor without experience
+              more interaction steps can match or exceed online skill and memory augmentation at approximately matched token cost.</li>
+            <li><b>Adapting before reuse pays.</b> With DeepSeek-V4-Pro, QCR's query-conditioned notes raise average success by 10.7 points over the
+              full trajectory while using 48.9% fewer online tokens.</li>
+            <li><b>Check outcomes independently of the explanation experience proposed</b>; when the same experience shapes both the action and its
+              check, the check can inherit the action's mistaken premise.</li>
+          </ul>
+        </article>
+
+        <!-- Maintenance -->
+        <article class="stage" id="maintenance" style="--stage: var(--maintenance)">
+          <header class="stage-head"><h3>Experience Maintenance</h3>
+            <a class="stage-link" href="papers.html#cat=maintenance">Browse <span data-count="maintenance">68</span> papers →</a></header>
+          <p>Each episode leaves new candidates and evidence about experience already retained. Simply appending candidates accumulates noise
+            alongside useful guidance; maintenance decides what to admit, combine, correct, or retire so that later reuse stays reliable and efficient.</p>
+          <figure class="fig">
+            <img src="assets/experience-maintenance.png" alt="Experience maintenance: admission, consolidation, refinement, and retirement acting on a shared experience repository." loading="lazy">
+          </figure>
+          <div class="table-wrap">
+            <table class="tbl">
+              <thead><tr><th>Operation</th><th>Problem signal</th><th>Maintenance choice</th><th>Main risk</th></tr></thead>
+              <tbody>
+                <tr><td><b>Admission</b></td><td>A new candidate is proposed</td><td>Accept supported value; defer uncertainty; reject unsupported content</td><td>Excluding rare useful guidance or accepting a false explanation</td></tr>
+                <tr><td><b>Consolidation</b></td><td>Equivalent or fragmented guidance accumulates</td><td>Merge equivalents; abstract or share structure while keeping distinctions</td><td>Compression removes an action-changing condition</td></tr>
+                <tr><td><b>Refinement</b></td><td>Contradictory outcomes or changed prerequisites</td><td>Diagnose; adjust reliability, scope, or actions; validate before replacement</td><td>Repairing the wrong cause or breaking valid behavior</td></tr>
+                <tr><td><b>Retirement</b></td><td>Suspected loss of added benefit</td><td>Downweight, archive, or delete according to evidence and recoverability</td><td>Confusing poor access with low value; losing a rare recovery</td></tr>
+                <tr><td><b>Coordination</b></td><td>Repeated formation defects or mismatched access</td><td>Change operation selection, formation, or retrieval</td><td>Delayed rewards obscure which change helped</td></tr>
+                <tr><td><b>Safeguards</b></td><td>A premise loses support or contamination is detected</td><td>Restrict affected guidance; trace, repair, and validate successors</td><td>Missing descendants or removing independently valid guidance</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">Evidence for these decisions comes at three <b>check levels</b>: a <em>support check</em> examines content against recorded
+            evidence; a <em>paired comparison</em> measures the local gain from using it; a <em>collection-level test</em> evaluates it together with the
+            experience it would join.</p>
+          <h4 class="takeaways">Key findings</h4>
+          <ul class="findings">
+            <li><b>Admission quality can decide whether updating helps at all.</b> In the Experience-Following study, adding every trajectory ends
+              below a fixed copy of the starting memory, while selective addition with a strict ground-truth evaluator ends above it — but deployed
+              agents rarely have such labels.</li>
+            <li><b>Updates can reverse earlier gains and spread.</b> Consolidation can drop an action-changing detail, and a mistaken update can
+              propagate into experience derived from it, so maintenance must also test unaffected behavior and keep what is needed to repair descendants.</li>
+            <li><b>Open questions:</b> how broadly to update, which interactions a collection-level test must cover, how to value units whose usage
+              data earlier decisions have filtered, and where to spend verification effort.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ============ EVALUATION ============ -->
+      <section id="evaluation">
+        <h2>Evaluation: Three Targets, Three Claims</h2>
+        <p>Task success alone does not show whether stored experience is correct or whether the agent benefited from using it: an agent may ignore
+          a useful lesson, complete a task despite errors in a stored procedure, or score higher simply because of additional model calls.</p>
+        <figure class="fig">
+          <img src="assets/experience-evaluation-overview.png" alt="Three evaluation targets: intrinsic experience quality, the experience utilization process, and downstream effects with experience frozen or updates enabled." loading="lazy">
+        </figure>
+        <div class="cards cols-3">
+          <div class="card-x"><h4>Intrinsic experience quality</h4><p class="q">Is retained guidance reliable?</p><p>Audits units and the repository against references fixed in advance.</p></div>
+          <div class="card-x"><h4>Experience utilization process</h4><p class="q">Is it used appropriately?</p><p>Scores triggering, selection, adaptation, and experience application, and attributes behavior to supplied experience.</p></div>
+          <div class="card-x"><h4>Downstream effects</h4><p class="q">Does it improve later tasks?</p><p>Measures effectiveness, cost, transfer, and harm with experience frozen or with updates enabled.</p></div>
+        </div>
+        <p>Higher performance with experience does not by itself show that an agent keeps improving. Each improvement claim needs more demanding evidence than the one before:</p>
+        <div class="table-wrap">
+          <table class="tbl claims">
+            <thead><tr><th>Improvement claim</th><th>Question</th><th>Necessary evidence</th></tr></thead>
+            <tbody>
+              <tr><td><b>Fixed experience reuse</b></td><td>Does a fixed body of experience help on new tasks?</td><td>A matched access/no-access comparison with a frozen repository and a fixed executor, reporting gains and harms under stated resources. For internalization: matched training with and without the frozen experience from the same initial policy, tested without the guidance.</td></tr>
+              <tr><td><b>Feedback-driven sustained improvement</b></td><td>Do updates from new trajectories keep adding capability?</td><td>Evidence that multiple updates add capability over a predeclared interval of comparable tasks, against a copy that keeps its starting repository fixed; acquisition, retention, regressions, costs, and uncertainty reported together.</td></tr>
+              <tr><td><b>Improvement of the learning mechanism</b></td><td>Does revising how experience is formed or updated improve later learning?</td><td>Identified, persistent revisions compared with the original mechanism on subsequent learning under comparable tasks and budgets.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <p><b>What the evidence supports today.</b> Fixed experience reuse has the clearest support, chiefly where tests or reference answers check
+            outcomes; budget-matched controls are uncommon. Evidence for sustained improvement is partial: some studies compare updating streams with a
+            fixed starting memory, but acquisition, retention, regressions, costs, and uncertainty are rarely examined together. No reviewed protocol
+            yet links audited unit quality to downstream gains and harms on the same cases, or checks whether a unit's reliability evaluation matches its evidence.</p>
+        </div>
+        <p class="more"><a href="papers.html#cat=evaluation">Browse <span data-count="evaluation">43</span> evaluation papers and benchmarks →</a></p>
+      </section>
+
+      <!-- ============ APPLICATIONS ============ -->
+      <section id="applications">
+        <h2>Applications</h2>
+        <p>Seven application settings, compared on the four reuse conditions that determine what experience is worth retaining and how it can be checked.</p>
+        <div class="table-wrap">
+          <table class="tbl apps">
+            <thead><tr><th>Application</th><th>Retained experience</th><th>Recurrence</th><th>Environmental change</th><th>Outcome checking</th><th>Feedback timing</th></tr></thead>
+            <tbody>
+              <tr><td><b>Question answering</b><span class="eg">ExpeL, Memento, Dynamic Cheatsheet, MERIT</span></td><td>Solution templates, search lessons, tool-use procedures</td><td>Reasoning and search difficulties recur across questions</td><td>Facts, sources, and databases differ across questions</td><td>Reference answers; report quality is harder to check</td><td>Per question, from answers or query results</td></tr>
+              <tr><td><b>Software engineering</b><span class="eg">SWE-Exp, SWE-ContextBench, EnvPilot</span></td><td>Diagnostic precedents, modifications, setup strategies</td><td>Similar symptoms recur, often with different causes</td><td>Versions, dependencies, and languages</td><td>Executable tests; they do not validate transfer of a diagnosis</td><td>Per attempt, from tests or setup runs</td></tr>
+              <tr><td><b>Computer use</b><span class="eg">AWM, SkillWeaver, MAGNET, CUA-Skill</span></td><td>Workflows, callable and authored skills, interaction corrections</td><td>Repeated operations on the same sites and applications</td><td>Interface updates and professional roles</td><td>State and artifact checks; clicks alone are insufficient</td><td>Per step, from interface state</td></tr>
+              <tr><td><b>Recommender systems</b><span class="eg">CRAVE, MemoCRS, Re2LLM, SAGER</span></td><td>Shared selection lessons, error-correcting hints, per-user decision principles</td><td>Recurring requests with varying preferences</td><td>Preferences drift and differ across users</td><td>Offline, against recorded user choices</td><td>Per recommendation, from the user's response</td></tr>
+              <tr><td><b>Embodied control</b><span class="eg">Voyager, CLIN, ViReSkill, Pragmatist Robot</span></td><td>Environmental lessons, plans, executable skills</td><td>Familiar instructions under different states</td><td>Objects, resources, and initial states</td><td>Simulator success; physical evidence is limited</td><td>After each attempt, from task outcome</td></tr>
+              <tr><td><b>Scientific research</b><span class="eg">DS-Agent, EvoScientist</span></td><td>Successful solutions, direction experience, experimental strategies</td><td>Modeling tasks recur; research directions vary</td><td>Task distributions and executor search procedures</td><td>Run status is checkable but budget-dependent; research value is not</td><td>Delayed and graded: run, baseline, evaluation</td></tr>
+              <tr><td><b>Trading and forecasting</b><span class="eg">TradingGroup, FinCon, Live-Evo</span></td><td>Prior decisions, outcomes, strategy lessons</td><td>Similar market or question conditions</td><td>Market conditions shift</td><td>Backtests or resolved forecasts, not prospective returns</td><td>Final outcomes delayed; applicability changes can be checked earlier</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Four design decisions</h3>
+        <div class="cards cols-2">
+          <div class="card-x"><h4>Whether to invest</h4><p>Build experience only when expected reuse repays the cost of acquiring, checking, and maintaining it. Repeated operations on a stable website can justify tested functions; a rarely recurring question type may justify only a lightweight precedent.</p></div>
+          <div class="card-x"><h4>What to retain</h4><p>Retain the conditions that can be recorded and checked with the guidance: repair stage and dependency context in software, the intended artifact and role in workplace procedures, the failing stage, resources, and state for negative scientific or robot experience.</p></div>
+          <div class="card-x"><h4>How strongly to use it</h4><p>Uncertain experience enters as a candidate explanation, planning option, or checklist. A tested procedure can execute when its inputs, starting state, and required output can be checked; current observations still settle the present request.</p></div>
+          <div class="card-x"><h4>When to revise</h4><p>Trigger review by observed changes, not age: an interface update, new output requirements, a role switch, or worsening outcomes on comparable tasks. With delayed outcomes, revisions justified by the final result wait until it resolves.</p></div>
+        </div>
+        <p class="more"><a href="papers.html#cat=app">Browse <span data-count="app">31</span> application papers →</a></p>
+      </section>
+
+      <!-- ============ CONCLUSIONS ============ -->
+      <section id="conclusions">
+        <h2>Main Conclusions</h2>
+        <ol class="conclusions">
+          <li><h4>Keep guidance connected to its conditions and evidence.</h4>
+            <p>The central design principle: throughout formation, reuse, and revision, keep guidance tied to its applicability conditions and to evidence
+              that can support or challenge it. A more compact or executable representation need not preserve clearer conditions or stronger support.</p></li>
+          <li><h4>Condensed guidance can lose the conditions that made it work.</h4>
+            <p>“On import errors, check dependencies,” condensed further into “reinstall dependencies,” skips the step that confirms a dependency is missing.
+              Keeping the source trajectory with the lesson makes such omissions recoverable.</p></li>
+          <li><h4>Shared experience must fit the agent that receives it.</h4>
+            <p>LEGOMem's ablations show that where task and subtask memories are placed affects success, and a more capable teacher does not always
+              produce the most helpful memory for a given student.</p></li>
+          <li><h4>Entries harmless individually can be harmful together.</h4>
+            <p>Entries that a model-based auditor mostly judges benign separately can elicit harmful behavior when a query activates them together,
+              so units must be tested in the combinations later queries activate.</p></li>
+          <li><h4>Rising task-stream scores mix learning with changing task demands.</h4>
+            <p>Separating the two requires comparing the updating agent with a copy whose starting repository stays frozen, on comparable tasks.</p></li>
+          <li><h4>Fixed experience reuse is the best-supported claim.</h4>
+            <p>Evidence is clearest where tests or reference answers check outcomes. Sustained improvement is supported only partially, and improvement
+              of the learning mechanism further requires testing the revised mechanism's contribution to subsequent learning.</p></li>
+          <li><h4>Reuse shapes what the agent learns next.</h4>
+            <p>A familiar strategy may suppress exploration, and a mistaken premise may propagate into later experience. Preserving sources and
+              conditions lets later evidence challenge earlier guidance.</p></li>
+        </ol>
+        <p class="note">Limits: the survey reviews a selective, mechanism-oriented corpus rather than a systematic screen; much evidence comes from recent
+          preprints; assigning evidence roles and improvement claims is the authors' reading of each experimental design; and the proposed evaluation
+          protocols have not yet been implemented.</p>
+      </section>
+
+      <!-- ============ OPEN PROBLEMS ============ -->
+      <section id="open-problems">
+        <h2>Eight Open Problems</h2>
+        <p>Toward improvement that is <em>cumulative, transferable, and correctable</em>. Each problem pairs why it remains open with what would count as progress.</p>
+        <h3 class="group">Acquiring and extending experience</h3>
+        <div class="cards cols-2 problems">
+          <div class="card-x"><span class="num">1</span><h4>Forming experience from human expert records</h4>
+            <p><b>Open because</b> records omit rejected alternatives, reasons, and environment assumptions, and reflect tools and permissions the agent may lack.</p>
+            <p><b>Progress:</b> human records reduce the interactions needed for a given success rate, counting human effort, without importing assumptions the agent cannot meet.</p></div>
+          <div class="card-x"><span class="num">2</span><h4>Preserving informative exploration</h4>
+            <p><b>Open because</b> successes under a dominant strategy cannot show whether an alternative would also have worked, and an abandoned strategy may never be retried.</p>
+            <p><b>Progress:</b> the agent notices when a once-effective lesson has become too restrictive, at lower interaction cost than exploring only after failures.</p></div>
+          <div class="card-x"><span class="num">3</span><h4>Transferring principles across domains</h4>
+            <p><b>Open because</b> the base model may already state the general principle; knowing when it applies and when it does not is the hard part.</p>
+            <p><b>Progress:</b> on held-out domains, the agent decides when to apply or withhold a principle more accurately than with domain-specific lessons or the base model alone.</p></div>
+          <div class="card-x"><span class="num">4</span><h4>Composing experience for unseen tasks</h4>
+            <p><b>Open because</b> two procedures can each succeed alone and fail together; a stored link cannot show that one produces what the next requires.</p>
+            <p><b>Progress:</b> the agent solves unseen combinations of known procedures and detects incompatible ones with limited checking.</p></div>
+        </div>
+        <h3 class="group">Keeping experience useful, revisable, and safe</h3>
+        <div class="cards cols-2 problems">
+          <div class="card-x"><span class="num">5</span><h4>Co-evolving experience representations and executors</h4>
+            <p><b>Open because</b> as the executor learns, or across executors sharing a repository, some guidance becomes redundant and some must change form.</p>
+            <p><b>Progress:</b> the executor drops support it no longer needs while still handling exceptions and learning from new experience.</p></div>
+          <div class="card-x"><span class="num">6</span><h4>Tracing and correcting propagated errors</h4>
+            <p><b>Open because</b> a flawed premise can pass into later experience without its wording or a recorded link, and privacy limits how much history can be kept.</p>
+            <p><b>Progress:</b> the agent removes an inherited flawed premise despite incomplete records, without discarding behavior that has independent support.</p></div>
+          <div class="card-x"><span class="num">7</span><h4>Learning under adversarial interaction</h4>
+            <p><b>Open because</b> an adversary can craft experience that passes checks on each unit, spread harm across units, or delay its effect.</p>
+            <p><b>Progress:</b> defenses limit adaptive attacks under stated access assumptions while losing little learning on benign tasks.</p></div>
+        </div>
+        <h3 class="group">Evaluating cumulative progress</h3>
+        <div class="cards cols-2 problems">
+          <div class="card-x"><span class="num">8</span><h4>Establishing cumulative capability gains</h4>
+            <p><b>Open because</b> rankings of learning strategies can reverse when later tasks reward different capabilities, so one task stream cannot settle them.</p>
+            <p><b>Progress:</b> gains hold across successive snapshots of the agent, reported with regressions and total cost, with final tests kept out of update decisions.</p></div>
+        </div>
+      </section>
+
+      <!-- ============ CITE ============ -->
+      <section id="cite">
+        <h2>Cite</h2>
+        <p>If the survey or this list helps your research, please cite:</p>
+        <div class="cite-box">
+          <pre class="bibtex"><code id="cite-code">@misc{yan2026trajectories, …}</code></pre>
+          <div class="dialog-actions">
+            <span class="copy-status" id="cite-status" role="status" aria-live="polite"></span>
+            <button class="btn primary" type="button" id="cite-copy">Copy BibTeX</button>
+          </div>
+        </div>
+        <div class="end-cta">
+          <a class="btn primary" href="papers.html">📚 Browse all <span data-count="all">271</span> papers</a>
+          <a class="btn" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/CONTRIBUTING.md">Suggest a paper</a>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <dialog id="bibtex-dialog" aria-labelledby="bibtex-title">
     <div class="dialog-inner">
@@ -93,11 +543,11 @@
 
   <footer class="wrap footer">
     <p><button class="link-btn" type="button" data-open-bibtex>Cite the survey (BibTeX)</button> ·
-      Data: <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/data/papers.yaml">data/papers.yaml</a> ·
-      Licensed <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/LICENSE">CC0-1.0</a> ·
-      Corrections and additions welcome via <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/issues">issues</a> or pull requests.</p>
+      <a href="papers.html">Paper list</a> ·
+      <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">GitHub</a> ·
+      Licensed <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/LICENSE">CC0-1.0</a></p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="common.js?v=3"></script>
 </body>
 </html>
