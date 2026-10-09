@@ -24,6 +24,7 @@
       <div class="stats" id="stats" aria-live="polite"></div>
       <div class="hero-links">
         <a class="btn primary" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents">★ GitHub repository</a>
+        <button class="btn" type="button" data-open-bibtex aria-haspopup="dialog">❝ BibTeX</button>
         <a class="btn" href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/CONTRIBUTING.md">Suggest a paper</a>
         <a class="btn" href="#about">About the taxonomy</a>
       </div>
@@ -74,8 +75,25 @@
     </section>
   </main>
 
+  <dialog id="bibtex-dialog" aria-labelledby="bibtex-title">
+    <div class="dialog-inner">
+      <div class="dialog-head">
+        <h2 id="bibtex-title">Cite this survey</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Close">✕</button>
+      </div>
+      <p class="muted">If this list helps your research, please cite
+        <em>From Trajectories to Experience: A Survey of Experience-Driven LLM Agents</em>.</p>
+      <pre class="bibtex"><code id="bibtex-code"></code></pre>
+      <div class="dialog-actions">
+        <span class="copy-status" id="bibtex-status" role="status" aria-live="polite"></span>
+        <button class="btn primary" type="button" id="bibtex-copy">Copy BibTeX</button>
+      </div>
+    </div>
+  </dialog>
+
   <footer class="wrap footer">
-    <p>Data: <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/data/papers.yaml">data/papers.yaml</a> ·
+    <p><button class="link-btn" type="button" data-open-bibtex>Cite the survey (BibTeX)</button> ·
+      Data: <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/data/papers.yaml">data/papers.yaml</a> ·
       Licensed <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/blob/main/LICENSE">CC0-1.0</a> ·
       Corrections and additions welcome via <a href="https://github.com/xiaohuiyan/awesome-experience-driven-agents/issues">issues</a> or pull requests.</p>
   </footer>

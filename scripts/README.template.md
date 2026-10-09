@@ -8,6 +8,7 @@
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Papers](https://img.shields.io/badge/papers-{{N_PAPERS}}-blue?style=flat-square)](#contents)
 [![Website](https://img.shields.io/badge/browse-searchable%20site-8A2BE2?style=flat-square)](https://xiaohuiyan.github.io/awesome-experience-driven-agents/)
+[![Cite](https://img.shields.io/badge/cite-BibTeX-orange?style=flat-square)](#citation)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)](LICENSE)
 
@@ -53,12 +54,7 @@ Each entry below appears under every lifecycle stage it contributes to. Entries 
 If you find this list useful, please cite our survey:
 
 ```bibtex
-@misc{yan2026trajectories,
-  title  = {From Trajectories to Experience: A Survey of Experience-Driven {LLM} Agents},
-  author = {Yan, Xiaohui and Zhang, Yingchen and Liu, Shiyao and Huang, Xiaofei and Yue, Yuxin and Xia, Zaiyu and Yao, Jiayu and Chen, Xinjie and Hu, Yun and Li, FuRong and Liu, Shenghua and Fan, Yixing and Li, Zixuan and Zhang, Ruqing and Guo, Jiafeng},
-  year   = {2026},
-  note   = {Preprint}
-}
+{{BIBTEX}}
 ```
 
 ## Contributing

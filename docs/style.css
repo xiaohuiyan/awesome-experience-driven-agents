@@ -97,6 +97,7 @@ a:hover { text-decoration: underline; }
   color: var(--text); background: var(--surface); font-size: 14px; font-weight: 500;
 }
 .btn:hover { text-decoration: none; border-color: var(--faint); }
+button.btn { cursor: pointer; font-family: inherit; line-height: inherit; }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .icon-btn {
   border: 1px solid var(--border); background: var(--surface); color: var(--muted); width: 34px; height: 34px;
@@ -180,6 +181,26 @@ mark { background: color-mix(in srgb, var(--maintenance) 30%, transparent); colo
 .defs li { margin: 4px 0; }
 .muted { color: var(--muted); font-size: 14px; }
 .footer { border-top: 1px solid var(--border); padding: 18px 16px 40px; color: var(--faint); font-size: 13px; }
+.footer .link-btn { margin: 0; font-size: 13px; }
+
+/* BibTeX dialog */
+#bibtex-dialog {
+  width: min(720px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--border); border-radius: 14px;
+  background: var(--surface); color: var(--text); box-shadow: 0 24px 64px rgba(10, 12, 18, .28);
+}
+#bibtex-dialog::backdrop { background: rgba(10, 12, 18, .5); backdrop-filter: blur(2px); }
+.dialog-inner { padding: 18px 20px 16px; }
+.dialog-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.dialog-head h2 { margin: 0; font-size: 18px; }
+.dialog-inner .muted { margin: 6px 0 0; }
+.bibtex {
+  margin: 12px 0 14px; padding: 12px 14px; max-height: 55vh; overflow: auto;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+  font: 12.5px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap; overflow-wrap: anywhere;
+}
+.dialog-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+.copy-status { color: var(--organization); font-size: 13px; }
 
 @media (max-width: 640px) {
   .hero { padding: 24px 0 20px; }

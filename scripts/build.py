@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate data/papers.yaml and render README.md + docs/papers.json.
+"""Validate data/papers.yaml and render README.md + docs/papers.json (papers, taxonomy, survey BibTeX).
 
 Usage:
     python scripts/build.py           # rebuild README.md and docs/papers.json
@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TAXONOMY = ROOT / "data" / "taxonomy.yaml"
 PAPERS = ROOT / "data" / "papers.yaml"
 TEMPLATE = ROOT / "scripts" / "README.template.md"
+CITATION = ROOT / "data" / "citation.bib"
 README = ROOT / "README.md"
 SITE_DATA = ROOT / "docs" / "papers.json"
 
@@ -103,7 +104,7 @@ def render_entry(p) -> str:
     return line
 
 
-def render_readme(tax, order, info, papers):
+def render_readme(tax, order, info, papers, bibtex):
     by_cat = defaultdict(list)
     for p in papers:
         for c in p["categories"]:
@@ -137,11 +138,12 @@ def render_readme(tax, order, info, papers):
            .replace("{{TOC}}", "\n".join(toc))
            .replace("{{PAPERS}}", "\n".join(body).rstrip() + "\n")
            .replace("{{N_PAPERS}}", str(len(papers)))
-           .replace("{{N_CODE}}", str(n_code)))
+           .replace("{{N_CODE}}", str(n_code))
+           .replace("{{BIBTEX}}", bibtex))
     return out
 
 
-def render_site_data(order, info, papers):
+def render_site_data(order, info, papers, bibtex):
     cats = []
     for cid in order:
         c = info[cid]
@@ -151,7 +153,7 @@ def render_site_data(order, info, papers):
     for p in sorted(papers, key=sort_key, reverse=True):
         items.append({k: p.get(k) for k in
                       ("id", "name", "title", "authors", "venue", "year", "date", "paper", "code", "note", "categories")})
-    return json.dumps({"categories": cats, "papers": items}, ensure_ascii=False, indent=1) + "\n"
+    return json.dumps({"citation": bibtex, "categories": cats, "papers": items}, ensure_ascii=False, indent=1) + "\n"
 
 
 def main():
@@ -166,8 +168,9 @@ def main():
         print("\n".join(errors), file=sys.stderr)
         sys.exit(1)
 
-    outputs = {README: render_readme(tax, order, info, papers),
-               SITE_DATA: render_site_data(order, info, papers)}
+    bibtex = CITATION.read_text(encoding="utf-8").strip()
+    outputs = {README: render_readme(tax, order, info, papers, bibtex),
+               SITE_DATA: render_site_data(order, info, papers, bibtex)}
     if args.check:
         stale = [str(f.relative_to(ROOT)) for f, text in outputs.items()
                  if not f.exists() or f.read_text(encoding="utf-8") != text]

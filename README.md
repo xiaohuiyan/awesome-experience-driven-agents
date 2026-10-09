@@ -8,6 +8,7 @@
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Papers](https://img.shields.io/badge/papers-271-blue?style=flat-square)](#contents)
 [![Website](https://img.shields.io/badge/browse-searchable%20site-8A2BE2?style=flat-square)](https://xiaohuiyan.github.io/awesome-experience-driven-agents/)
+[![Cite](https://img.shields.io/badge/cite-BibTeX-orange?style=flat-square)](#citation)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)](LICENSE)
 

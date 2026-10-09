@@ -194,10 +194,34 @@
   });
   window.addEventListener("hashchange", () => { readHash(); render(); });
 
+  // ---------- BibTeX dialog ----------
+  let BIBTEX = "";
+  const dlg = $("bibtex-dialog"), bibCode = $("bibtex-code"), bibStatus = $("bibtex-status");
+  function openBibtex() {
+    bibCode.textContent = BIBTEX || "BibTeX is still loading…";
+    bibStatus.textContent = "";
+    if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+  }
+  document.addEventListener("click", (e) => { if (e.target.closest("[data-open-bibtex]")) openBibtex(); });
+  // Clicks on the backdrop land on the <dialog> itself; clicks on its content land inside .dialog-inner.
+  dlg.addEventListener("click", (e) => { if (e.target === dlg || e.target.closest("[data-close]")) dlg.close(); });
+  $("bibtex-copy").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(BIBTEX);
+      bibStatus.textContent = "Copied to clipboard";
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(bibCode);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      bibStatus.textContent = "Selected — press Ctrl+C (⌘C) to copy";
+    }
+  });
+
   // ---------- boot ----------
   fetch("papers.json")
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then((data) => {
+      BIBTEX = data.citation || "";
       for (const c of data.categories) CATS[c.id] = c;
       TOPS = data.categories.filter((c) => !c.parent);
       PAPERS = data.papers.map((p) => ({ ...p, _hay: [p.name, p.title, p.authors, p.note, p.venue].join(" ").toLowerCase() }));
