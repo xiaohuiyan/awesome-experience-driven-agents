@@ -199,8 +199,8 @@ section[id], article[id], h3[id] { scroll-margin-top: calc(var(--nav-h) + 16px);
 
 /* survey hero */
 .survey-hero { padding: 44px 0 30px; }
-.survey-hero h1 { margin: 10px 0 2px; font-size: clamp(32px, 5.4vw, 52px); }
-.subtitle { margin: 0 0 16px; font-size: clamp(18px, 2.4vw, 24px); color: var(--muted); font-weight: 500; }
+.pretitle { margin: 12px 0 0; font-size: clamp(17px, 2.2vw, 22px); color: var(--muted); font-weight: 500; letter-spacing: -.005em; }
+.survey-hero h1 { margin: 4px 0 18px; font-size: clamp(32px, 5.4vw, 52px); }
 .authors { margin: 0; max-width: 980px; font-size: 14.5px; color: var(--text); }
 .affil { margin: 4px 0 18px; font-size: 13.5px; color: var(--faint); }
 .authors sup, .affil sup { color: var(--accent); font-weight: 600; }
