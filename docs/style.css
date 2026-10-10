@@ -204,6 +204,9 @@ section[id], article[id], h3[id] { scroll-margin-top: calc(var(--nav-h) + 16px);
 .survey-hero h1 { margin: 4px 0 18px; font-size: clamp(32px, 5.4vw, 52px); }
 .authors { margin: 0; max-width: 980px; font-size: 14.5px; color: var(--text); }
 .affil { margin: 4px 0 18px; font-size: 13.5px; color: var(--faint); }
+.paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.paper-links .btn { padding: 8px 16px; font-size: 14.5px; }
+.btn-meta { margin-left: 6px; font-size: 12.5px; font-weight: 400; opacity: .8; }
 .authors sup, .affil sup { color: var(--accent); font-weight: 600; }
 .question {
   max-width: 860px; margin: 0 0 20px; padding: 12px 16px; border-left: 3px solid var(--accent);

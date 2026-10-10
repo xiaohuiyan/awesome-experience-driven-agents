@@ -13,7 +13,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)](LICENSE)
 
-**[📄 Paper](https://www.preprints.org/manuscript/202610.0937) · [📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
+**[📄 Paper](https://www.preprints.org/manuscript/202610.0937) · [📥 PDF](https://xiaohuiyan.github.io/awesome-experience-driven-agents/Experience-Driven-Agent-Survey.pdf) · [📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
 
 </div>
 
