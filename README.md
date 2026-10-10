@@ -7,16 +7,17 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Papers](https://img.shields.io/badge/papers-271-blue?style=flat-square)](#contents)
+[![Paper](https://img.shields.io/badge/paper-Preprints.org-red?style=flat-square)](https://www.preprints.org/manuscript/202610.0937)
 [![Website](https://img.shields.io/badge/website-survey%20overview-8A2BE2?style=flat-square)](https://xiaohuiyan.github.io/awesome-experience-driven-agents/)
 [![Cite](https://img.shields.io/badge/cite-BibTeX-orange?style=flat-square)](#citation)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)](LICENSE)
 
-**[📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
+**[📄 Paper](https://www.preprints.org/manuscript/202610.0937) · [📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
 
 </div>
 
-This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** (preprint coming soon). It covers the 271 works reviewed in the survey, 69 of which have public code, organized by the survey's taxonomy.
+This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** ([preprint](https://www.preprints.org/manuscript/202610.0937)). It covers the 271 works reviewed in the survey, 69 of which have public code, organized by the survey's taxonomy.
 
 > LLM agents record in their trajectories which strategies failed and how they recovered, yet an agent that resolves a problem in one episode may repeat the same diagnostic detour in the next.
 > Work on reflection, agent memory, workflow learning, and skill acquisition addresses this gap under different names.
@@ -610,10 +611,12 @@ If you find this list useful, please cite our survey:
 
 ```bibtex
 @misc{yan2026trajectories,
-  title  = {From Trajectories to Experience: A Survey of Experience-Driven {LLM} Agents},
-  author = {Yan, Xiaohui and Zhang, Yingchen and Liu, Shiyao and Huang, Xiaofei and Yue, Yuxin and Xia, Zaiyu and Yao, Jiayu and Chen, Xinjie and Hu, Yun and Li, FuRong and Liu, Shenghua and Fan, Yixing and Li, Zixuan and Zhang, Ruqing and Guo, Jiafeng},
-  year   = {2026},
-  note   = {Preprint}
+  title        = {From Trajectories to Experience: A Survey of Experience-Driven {LLM} Agents},
+  author       = {Yan, Xiaohui and Zhang, Yingchen and Liu, Shiyao and Huang, Xiaofei and Yue, Yuxin and Xia, Zaiyu and Yao, Jiayu and Chen, Xinjie and Hu, Yun and Li, FuRong and Liu, Shenghua and Fan, Yixing and Li, Zixuan and Zhang, Ruqing and Guo, Jiafeng},
+  year         = {2026},
+  howpublished = {Preprints.org},
+  url          = {https://www.preprints.org/manuscript/202610.0937},
+  note         = {Preprint}
 }
 ```
 

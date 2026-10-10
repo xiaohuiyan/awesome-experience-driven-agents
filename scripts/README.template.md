@@ -7,16 +7,17 @@
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![Papers](https://img.shields.io/badge/papers-{{N_PAPERS}}-blue?style=flat-square)](#contents)
+[![Paper](https://img.shields.io/badge/paper-Preprints.org-red?style=flat-square)](https://www.preprints.org/manuscript/202610.0937)
 [![Website](https://img.shields.io/badge/website-survey%20overview-8A2BE2?style=flat-square)](https://xiaohuiyan.github.io/awesome-experience-driven-agents/)
 [![Cite](https://img.shields.io/badge/cite-BibTeX-orange?style=flat-square)](#citation)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 [![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-lightgrey?style=flat-square)](LICENSE)
 
-**[📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
+**[📄 Paper](https://www.preprints.org/manuscript/202610.0937) · [📖 Survey overview](https://xiaohuiyan.github.io/awesome-experience-driven-agents/) · [🔎 Searchable paper list](https://xiaohuiyan.github.io/awesome-experience-driven-agents/papers.html)**
 
 </div>
 
-This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** (preprint coming soon). It covers the {{N_PAPERS}} works reviewed in the survey, {{N_CODE}} of which have public code, organized by the survey's taxonomy.
+This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** ([preprint](https://www.preprints.org/manuscript/202610.0937)). It covers the {{N_PAPERS}} works reviewed in the survey, {{N_CODE}} of which have public code, organized by the survey's taxonomy.
 
 > LLM agents record in their trajectories which strategies failed and how they recovered, yet an agent that resolves a problem in one episode may repeat the same diagnostic detour in the next.
 > Work on reflection, agent memory, workflow learning, and skill acquisition addresses this gap under different names.

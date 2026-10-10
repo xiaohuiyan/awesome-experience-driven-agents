@@ -1,5 +1,5 @@
 {
- "citation": "@misc{yan2026trajectories,\n  title  = {From Trajectories to Experience: A Survey of Experience-Driven {LLM} Agents},\n  author = {Yan, Xiaohui and Zhang, Yingchen and Liu, Shiyao and Huang, Xiaofei and Yue, Yuxin and Xia, Zaiyu and Yao, Jiayu and Chen, Xinjie and Hu, Yun and Li, FuRong and Liu, Shenghua and Fan, Yixing and Li, Zixuan and Zhang, Ruqing and Guo, Jiafeng},\n  year   = {2026},\n  note   = {Preprint}\n}",
+ "citation": "@misc{yan2026trajectories,\n  title        = {From Trajectories to Experience: A Survey of Experience-Driven {LLM} Agents},\n  author       = {Yan, Xiaohui and Zhang, Yingchen and Liu, Shiyao and Huang, Xiaofei and Yue, Yuxin and Xia, Zaiyu and Yao, Jiayu and Chen, Xinjie and Hu, Yun and Li, FuRong and Liu, Shenghua and Fan, Yixing and Li, Zixuan and Zhang, Ruqing and Guo, Jiafeng},\n  year         = {2026},\n  howpublished = {Preprints.org},\n  url          = {https://www.preprints.org/manuscript/202610.0937},\n  note         = {Preprint}\n}",
  "categories": [
   {
    "id": "surveys",
