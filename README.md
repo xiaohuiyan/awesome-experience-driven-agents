@@ -6,7 +6,7 @@
 **A curated list of research on LLM agents that learn from their own task-execution trajectories:<br>how experience is formed, organized, utilized, and maintained.**
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Papers](https://img.shields.io/badge/papers-271-blue?style=flat-square)](#contents)
+[![Papers](https://img.shields.io/badge/papers-272-blue?style=flat-square)](#contents)
 [![Paper](https://img.shields.io/badge/paper-Preprints.org-red?style=flat-square)](https://www.preprints.org/manuscript/202610.0937)
 [![Website](https://img.shields.io/badge/website-survey%20overview-8A2BE2?style=flat-square)](https://xiaohuiyan.github.io/awesome-experience-driven-agents/)
 [![Cite](https://img.shields.io/badge/cite-BibTeX-orange?style=flat-square)](#citation)
@@ -17,7 +17,7 @@
 
 </div>
 
-This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** ([preprint](https://www.preprints.org/manuscript/202610.0937)). It covers the 271 works reviewed in the survey, 69 of which have public code, organized by the survey's taxonomy.
+This list accompanies our survey **_From Trajectories to Experience: A Survey of Experience-Driven LLM Agents_** ([preprint](https://www.preprints.org/manuscript/202610.0937)). It covers the 272 works reviewed in the survey, 70 of which have public code, organized by the survey's taxonomy.
 
 > LLM agents record in their trajectories which strategies failed and how they recovered, yet an agent that resolves a problem in one episode may repeat the same diagnostic detour in the next.
 > Work on reflection, agent memory, workflow learning, and skill acquisition addresses this gap under different names.
@@ -514,6 +514,7 @@ Evaluating intrinsic experience quality, the utilization process, and downstream
 
 *Benchmarks for updating experience over streams, regression and forgetting, and meta-level learning.*
 
+- **Continual-ARC** · [Measuring Skill Acquisition over a Working Lifetime](https://arxiv.org/abs/2611.14505) · *arXiv 2026* · [code](https://github.com/unifyai/continual-arc) ![](https://img.shields.io/github/stars/unifyai/continual-arc?style=flat-square&label=%E2%AD%90&color=lightgrey)<br><sub>Lifelong stream of recurring ARC-AGI tasks scoring memory-based and weight-based learners on one scale, then testing memorization and generalization.</sub>
 - **PATH-Bench** · [Path-Dependent Evaluation of Lifelong Agents](https://arxiv.org/abs/2608.01149) · *arXiv 2026*<br><sub>Path-dependent evaluation of lifelong agents: forward/backward transfer and forgetting.</sub>
 - **AgentStream** · [How Well Do Self-Evolving LLM Agents Perform Under Streaming Tasks?](https://arxiv.org/abs/2608.00155) · *arXiv 2026* · [code](https://github.com/Jasper-Yan/AgentStream) ![](https://img.shields.io/github/stars/Jasper-Yan/AgentStream?style=flat-square&label=%E2%AD%90&color=lightgrey)<br><sub>Self-evolving agents under streaming tasks; rankings change with stream composition.</sub>
 - **SEAGym** · [An Evaluation Environment for Self-Evolving LLM Agents](https://arxiv.org/abs/2606.17546) · *arXiv 2026*<br><sub>Evaluation environment snapshotting self-evolving harnesses on held-out and replayed tasks.</sub>

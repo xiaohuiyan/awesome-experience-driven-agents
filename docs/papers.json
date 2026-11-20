@@ -270,6 +270,21 @@
  ],
  "papers": [
   {
+   "id": "lenton2026continualarc",
+   "name": "Continual-ARC",
+   "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
+   "authors": "Lenton et al.",
+   "venue": "arXiv 2026",
+   "year": 2026,
+   "date": "2026-11",
+   "paper": "https://arxiv.org/abs/2611.14505",
+   "code": "https://github.com/unifyai/continual-arc",
+   "note": "Lifelong stream of recurring ARC-AGI tasks scoring memory-based and weight-based learners on one scale, then testing memorization and generalization.",
+   "categories": [
+    "evaluation.sustained"
+   ]
+  },
+  {
    "id": "fu2026segos",
    "name": "SE-GoS",
    "title": "SE-GoS: Self-Evolving Graph-of-Skills for Skill Library at Scale",
